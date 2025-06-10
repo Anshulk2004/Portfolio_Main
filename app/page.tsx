@@ -104,7 +104,7 @@ export default function Portfolio() {
       title: "ToneCraft – Emotionally Intelligent NFT Audiobook Marketplace",
       description:
         "Launched an NFT marketplace featuring emotionally expressive audiobook voices using TTS libraries and blockchain integration. Achieved 95% user satisfaction by enhancing audio quality through sentiment-aware synthesis with Amazon Polly.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/ToneCraft.jpg?height=400&width=600",
       technologies: [
         "Python",
         "AWS",
@@ -122,7 +122,7 @@ export default function Portfolio() {
       title: "FestHub – College Fest Event Manager",
       description:
         "Built a mobile app for event discovery and ticketing tailored for college fests. Includes user panels for profiles and bookings, an admin dashboard for event uploads, and a Gemini-powered chatbot. Integrated Firebase Auth and Stripe with 98% payment success.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/app.avif?height=400&width=600",
       technologies: ["Flutter", "Dart", "Firebase", "Gemini", "Stripe"],
       github: "https://github.com/Anshulk2004/Event_Booking_App",
       live: "",
@@ -131,7 +131,7 @@ export default function Portfolio() {
       title: "RideOn – AI-Powered Ride Sharing & Courier App",
       description:
         "Developed a full-stack ride sharing platform with booking, rentals, courier service, and driver onboarding. Features Stripe integration, OTP verification, dynamic Leaflet.js maps, and a Gemini-based chatbot. Serves 100+ users with real-time updates.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/RideOn.png?height=400&width=600",
       technologies: [
         "Python",
         "Next.js",
@@ -147,7 +147,7 @@ export default function Portfolio() {
       title: "Real-Time Analytics Dashboard",
       description:
         "Interactive dashboard for business intelligence with real-time data visualization, custom reports, and predictive analytics using machine learning algorithms.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/app1.avif?height=400&width=600",
       technologies: ["React", "D3.js", "Python", "FastAPI", "Redis"],
       github: "#",
       live: "#",
@@ -156,7 +156,7 @@ export default function Portfolio() {
       title: "Blockchain Voting System",
       description:
         "Secure and transparent voting system built on blockchain technology. Features include voter authentication, immutable vote records, and real-time result tracking.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/Feedback.jpg?height=400&width=600",
       technologies: ["Solidity", "Web3.js", "React", "Node.js", "Ethereum"],
       github: "#",
       live: "#",
@@ -165,7 +165,7 @@ export default function Portfolio() {
       title: "Smart Home IoT Platform",
       description:
         "Comprehensive IoT platform for smart home automation with device management, energy monitoring, and AI-powered optimization for energy efficiency.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/work.avif?height=400&width=600",
       technologies: ["Python", "MQTT", "React", "InfluxDB", "Raspberry Pi"],
       github: "#",
       live: "#",
