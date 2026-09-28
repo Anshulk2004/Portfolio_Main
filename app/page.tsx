@@ -207,7 +207,7 @@ export default function Portfolio() {
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <h1
-                className={`text-xl font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}
+                className="text-xl font-bold text-white"
               >
                 Anshul Kumar
               </h1>
@@ -226,9 +226,7 @@ export default function Portfolio() {
                     whileTap={{ scale: 0.95 }}
                     onClick={() => scrollToSection(item.id)}
                     className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
-                      isDark
-                        ? "text-gray-300 hover:text-white hover:bg-gray-800"
-                        : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+                      "text-white hover:text-white hover:bg-gray-800"
                     }`}
                   >
                     {item.name}
@@ -268,9 +266,7 @@ export default function Portfolio() {
                     size="icon"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     className={
-                      isDark
-                        ? "text-gray-300 hover:text-white hover:bg-gray-800"
-                        : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+                      "text-white hover:text-white hover:bg-gray-800"
                     }
                   >
                     {isMenuOpen ? (
@@ -339,7 +335,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                isDark ? "text-gray-400" : "text-gray-600"
+                "text-gray-300"
               } max-w-2xl mx-auto`}
             >
               My professional journey and the roles that have shaped my career
@@ -498,7 +494,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                isDark ? "text-gray-400" : "text-gray-600"
+                "text-gray-300"
               } max-w-2xl mx-auto`}
             >
               The tools and technologies I use to bring ideas to life
@@ -579,7 +575,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                isDark ? "text-gray-400" : "text-gray-600"
+                "text-gray-300"
               } max-w-2xl mx-auto`}
             >
               A showcase of my recent work and personal projects
@@ -605,7 +601,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                isDark ? "text-gray-400" : "text-gray-600"
+                "text-gray-300"
               } max-w-2xl mx-auto`}
             >
               Milestones and recognition that mark my professional journey
@@ -716,7 +712,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                isDark ? "text-gray-400" : "text-gray-600"
+                "text-gray-300"
               } max-w-2xl mx-auto`}
             >
               Beyond coding - my involvement in community and personal interests
@@ -797,7 +793,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                isDark ? "text-gray-400" : "text-gray-600"
+                "text-gray-300"
               } max-w-2xl mx-auto`}
             >
               I'm always open to discussing new opportunities and interesting
@@ -978,7 +974,7 @@ export default function Portfolio() {
 
       {/* Enhanced Footer - Fixed Icons */}
       <motion.footer
-className="border-t border-gray-800 bg-black py-12"
+className="border-t border-gray-800 bg-black py-12 text-white"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -993,12 +989,12 @@ className="border-t border-gray-800 bg-black py-12"
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h3 className={`text-xl font-bold mb-4 ${isDark ? "text-slate-100" : "text-slate-900"}`}>
+              <h3 className={`text-xl font-bold mb-4 ${"text-white"}`}>
                 Anshul Kumar
               </h3>
               <p
                 className={`${
-                  isDark ? "text-gray-400" : "text-gray-600"
+                  "text-gray-300"
                 } mb-4 max-w-md`}
               >
                 Software Developer & Full Stack Developer passionate about creating
@@ -1042,9 +1038,7 @@ className="border-t border-gray-800 bg-black py-12"
                     <motion.button
                       onClick={() => scrollToSection(item.id)}
                       className={`${
-                        isDark
-                          ? "text-gray-400 hover:text-white"
-                          : "text-gray-600 hover:text-gray-900"
+                        "text-gray-300 hover:text-white"
                       } transition-colors duration-200`}
                       whileHover={{ x: 5 }}
                     >
@@ -1065,21 +1059,21 @@ className="border-t border-gray-800 bg-black py-12"
               <div className="space-y-2">
                 <p
                   className={`${
-                    isDark ? "text-gray-400" : "text-gray-600"
+                    "text-gray-300"
                   } text-sm`}
                 >
                   anshulwork0102@gmail.com
                 </p>
                 <p
                   className={`${
-                    isDark ? "text-gray-400" : "text-gray-600"
+                    "text-gray-300"
                   } text-sm`}
                 >
                   +91 9870803265
                 </p>
                 <p
                   className={`${
-                    isDark ? "text-gray-400" : "text-gray-600"
+                    "text-gray-300"
                   } text-sm`}
                 >
                   Pune, Maharashtra
@@ -1099,7 +1093,7 @@ className="border-t border-gray-800 bg-black py-12"
           >
             <p
               className={`${
-                isDark ? "text-gray-400" : "text-gray-600"
+                "text-gray-300"
               } text-sm`}
             >
               © {new Date().getFullYear()} Anshul Kumar. All rights reserved. 
