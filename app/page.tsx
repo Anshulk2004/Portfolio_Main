@@ -724,25 +724,21 @@ export default function Portfolio() {
                 title: "Student Activity Council | Head",
                 description:
                   "Hosted Iconclave, the annual cultural and technical festival, along with entrepreneurship initiatives, campus events, and other student engagement programs.",
-                icon: "SAC",
               },
               {
                 title: "E-Cell | Cluster Head",
                 description:
                   "Led E-Summit 2k23 and 2k24 with 1,000+ attendees while organizing entrepreneurship and technology events that strengthened student engagement.",
-                icon: "E",
               },
               {
                 title: "localhost | Web3 and AI/ML Mentor",
                 description:
                   "Conducted web development and Web3 sessions for 200+ learners and organized four major hackathons for students.",
-                icon: "L",
               },
               {
                 title: "Sports Club | Head",
                 description:
                   "Organized Eklavya, the annual sports fest, twice with 500+ participants and hosted National Sports Day for 300+ students.",
-                icon: "S",
               },
             ].map((activity, index) => (
               <motion.div
@@ -759,12 +755,9 @@ export default function Portfolio() {
                   } hover:shadow-xl transition-all duration-300 h-full`}
                 >
                   <CardHeader>
-                    <div className="flex items-center space-x-3">
-                      <span className="text-3xl">{activity.icon}</span>
-                      <CardTitle className="text-lg">
-                        {activity.title}
-                      </CardTitle>
-                    </div>
+                    <CardTitle className="text-lg">
+                      {activity.title}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className={isDark ? "text-gray-300" : "text-gray-700"}>
@@ -959,7 +952,7 @@ export default function Portfolio() {
                     >
                       <Button
                         type="submit"
-                        className={`w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transform transition-all duration-300 shadow-lg hover:shadow-xl`}
+                        className={`w-full bg-blue-600 hover:bg-blue-700 text-white transform transition-all duration-300 shadow-lg hover:shadow-xl`}
                       >
                         Send Message
                       </Button>
@@ -991,7 +984,7 @@ export default function Portfolio() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h3 className={`text-xl font-bold mb-4 ${isDark ? "text-slate-100" : "text-slate-900"}`}>
                 Anshul Kumar
               </h3>
               <p
