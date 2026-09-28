@@ -176,7 +176,7 @@ export function ProjectCarousel({ projects, isDark }: ProjectCarouselProps) {
       </div>
 
       {/* Thumbnail Preview */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
         {projects.map((project, index) => (
           <motion.div
             key={index}

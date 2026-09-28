@@ -137,6 +137,18 @@ export default function Portfolio() {
       github: "https://github.com/Anshulk2004/FJ-FE-R2-Anshul-Kumar-IIITPune",
       live: "https://fj-fe-r2-anshul-kumar-iiit-pune.vercel.app/",
     },
+    {
+      title: "FestHub – College Fest Event Manager",
+      description: [
+        "Built a mobile app for event discovery and ticketing tailored for college fests.",
+        "Created user panels for profiles and bookings and an admin dashboard for event uploads.",
+        "Added a Gemini-powered chatbot and integrated Firebase Auth with Stripe, achieving a 98% payment success rate.",
+      ],
+      image: "",
+      technologies: ["Flutter", "Dart", "Firebase", "Gemini", "Stripe"],
+      github: "",
+      live: "",
+    },
   ];
 
   const socialLinks = [
