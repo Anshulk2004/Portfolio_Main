@@ -322,41 +322,6 @@ export default function Portfolio() {
       {/* Enhanced Hero Section */}
       <EnhancedHero isDark={isDark} scrollToSection={scrollToSection} />
 
-      {/* About Section */}
-      <motion.section
-        {...fadeInUp}
-        id="about"
-        className={`py-20 ${isDark ? "bg-gray-900" : "bg-gray-50"}`}
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-8">About Me</h2>
-            <div className={`flex flex-col gap-5 text-lg leading-relaxed ${isDark ? "text-gray-300" : "text-gray-700"}`}>
-              <p>
-                Hi, I&apos;m Anshul Kumar, a Software Engineer at HSBC and a B.Tech CSE graduate from IIIT Pune, with experience building data-driven, cloud-based, and enterprise software systems.
-              </p>
-              <p>
-                At HSBC, I currently work on technology migration projects, contributing to the transition and modernization of large-scale organizational systems. I have also had exposure to AI-focused work, gaining experience with applying AI concepts to practical engineering problems. Previously, I interned at Fractal.ai, where I worked on cloud-based automation and developed Python solutions integrated with AWS, GCP, and Azure, strengthening my understanding of production-grade cloud engineering.
-              </p>
-              <p>
-                My technical interests include backend and full-stack development, data systems, cloud infrastructure, and machine learning, with exposure to LLMs and generative AI. I enjoy working close to real systems, solving practical engineering problems, and understanding how software and data systems operate at scale.
-              </p>
-              <p>
-                Outside of work, I enjoy solving puzzles, reading tech articles, and staying active through outdoor sports.
-              </p>
-              <p>
-                I&apos;m always keen to learn, build, and connect with people working on interesting technology and engineering problems.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </motion.section>
-
       {/* Work Experience Section */}
       <motion.section
         {...fadeInUp}

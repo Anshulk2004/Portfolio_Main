@@ -104,9 +104,7 @@ export function EnhancedHero({ isDark, scrollToSection }: EnhancedHeroProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                A 4th-year B.Tech CSE student passionate about becoming a skilled Machine Learning or Software Engineer.
-I am proficient in data science, machine learning, and have hands-on experience with large language models, generative AI, and web technologies.
-Outside of tech, I enjoy solving puzzles, reading tech articles, and playing outdoor sports.
+                Hi, I&apos;m Anshul Kumar, a Software Engineer at HSBC and a B.Tech CSE graduate from IIIT Pune, with experience building data-driven, cloud-based, and enterprise software systems. At HSBC, I currently work on technology migration projects, contributing to the transition and modernization of large-scale organizational systems. I have also had exposure to AI-focused work, gaining experience with applying AI concepts to practical engineering problems. Previously, I interned at Fractal.ai, where I worked on cloud-based automation and developed Python solutions integrated with AWS, GCP, and Azure, strengthening my understanding of production-grade cloud engineering. My technical interests include backend and full-stack development, data systems, cloud infrastructure, and machine learning, with exposure to LLMs and generative AI. I enjoy working close to real systems, solving practical engineering problems, and understanding how software and data systems operate at scale. Outside of work, I enjoy solving puzzles, reading tech articles, and staying active through outdoor sports. I&apos;m always keen to learn, build, and connect with people working on interesting technology and engineering problems.
               </motion.p>
             </div>
 
