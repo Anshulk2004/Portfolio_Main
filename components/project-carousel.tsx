@@ -96,6 +96,7 @@ export function ProjectCarousel({ projects, isDark }: ProjectCarouselProps) {
                     </div>
                     <div className="flex space-x-4">
                       <Button
+                        asChild
                         variant="outline"
                         className={`${
                           isDark
@@ -103,10 +104,13 @@ export function ProjectCarousel({ projects, isDark }: ProjectCarouselProps) {
                             : "border-gray-300 text-gray-700 hover:bg-gray-50"
                         }`}
                       >
-                        <Github className="mr-2 h-4 w-4" />
-                        Code
+                        <a href={projects[currentIndex].github} target="_blank" rel="noreferrer">
+                          <Github className="mr-2 h-4 w-4" />
+                          Code
+                        </a>
                       </Button>
                       <Button
+                        asChild
                         variant="outline"
                         className={`${
                           isDark
@@ -114,8 +118,10 @@ export function ProjectCarousel({ projects, isDark }: ProjectCarouselProps) {
                             : "border-gray-300 text-gray-700 hover:bg-gray-50"
                         }`}
                       >
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Live Demo
+                        <a href={projects[currentIndex].live} target="_blank" rel="noreferrer">
+                          <ExternalLink className="mr-2 h-4 w-4" />
+                          Live Demo
+                        </a>
                       </Button>
                     </div>
                   </CardContent>

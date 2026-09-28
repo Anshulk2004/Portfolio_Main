@@ -103,72 +103,29 @@ export default function Portfolio() {
     {
       title: "ToneCraft – Emotionally Intelligent NFT Audiobook Marketplace",
       description:
-        "Launched an NFT marketplace featuring emotionally expressive audiobook voices using TTS libraries and blockchain integration. Achieved 95% user satisfaction by enhancing audio quality through sentiment-aware synthesis with Amazon Polly.",
+        "Created an NFT marketplace for audiobooks using TTS libraries and blockchain integration. Built a 92% accurate NLP sentiment classifier and improved audio output quality with emotion-aware Amazon Polly processing, achieving 95% user satisfaction.",
       image: "/ToneCraft.jpg?height=400&width=600",
-      technologies: [
-        "Python",
-        "AWS",
-        "FastAPI",
-        "Flask",
-        "Solidity",
-        "IPFS",
-        "Node.js",
-        "ReactJS",
-      ],
+      technologies: ["Python", "AWS", "FastAPI", "Flask", "Solidity", "IPFS", "Node.js", "ReactJS"],
       github: "https://github.com/Anshulk2004/ToneCraft",
       live: "https://tone-craft-frontend.vercel.app/",
     },
     {
-      title: "FestHub – College Fest Event Manager",
+      title: "Risk-0 Portfolio – Live Market Intelligence Platform",
       description:
-        "Built a mobile app for event discovery and ticketing tailored for college fests. Includes user panels for profiles and bookings, an admin dashboard for event uploads, and a Gemini-powered chatbot. Integrated Firebase Auth and Stripe with 98% payment success.",
-      image: "/app.avif?height=400&width=600",
-      technologies: ["Flutter", "Dart", "Firebase", "Gemini", "Stripe"],
-      github: "https://github.com/Anshulk2004/Event_Booking_App",
-      live: "",
+        "Built a live portfolio tracking platform with market data integration, multi-asset allocation analysis, and a financial learning playground. Added a portfolio-aware Gemini chatbot with 90%+ response relevance and a Qiskit quantum simulation module for HFT behavior and covariance analysis.",
+      image: "/app1.avif?height=400&width=600",
+      technologies: ["Spring Boot", "Next.js", "TypeScript", "Python", "MySQL", "Gemini API", "Qiskit"],
+      github: "#",
+      live: "#",
     },
     {
       title: "RideOn – AI-Powered Ride Sharing & Courier App",
       description:
-        "Developed a full-stack ride sharing platform with booking, rentals, courier service, and driver onboarding. Features Stripe integration, OTP verification, dynamic Leaflet.js maps, and a Gemini-based chatbot. Serves 100+ users with real-time updates.",
+        "Engineered a ride-sharing application with ride booking, rentals, courier services, and driver onboarding. Added NextAuth, Stripe payments, OTP verification, a Gemini chatbot, wallet management, booking history, and interactive Leaflet.js maps for 100+ users.",
       image: "/RideOn.png?height=400&width=600",
-      technologies: [
-        "Python",
-        "Next.js",
-        "TypeScript",
-        "Leaflet.js",
-        "MongoDB",
-        "Gemini API",
-      ],
+      technologies: ["Python", "Next.js", "TypeScript", "Leaflet.js", "MongoDB", "Gemini API"],
       github: "https://github.com/Anshulk2004/FJ-FE-R2-Anshul-Kumar-IIITPune",
       live: "https://fj-fe-r2-anshul-kumar-iiit-pune.vercel.app/",
-    },
-    {
-      title: "Real-Time Analytics Dashboard",
-      description:
-        "Interactive dashboard for business intelligence with real-time data visualization, custom reports, and predictive analytics using machine learning algorithms.",
-      image: "/app1.avif?height=400&width=600",
-      technologies: ["React", "D3.js", "Python", "FastAPI", "Redis"],
-      github: "#",
-      live: "#",
-    },
-    {
-      title: "Blockchain Voting System",
-      description:
-        "Secure and transparent voting system built on blockchain technology. Features include voter authentication, immutable vote records, and real-time result tracking.",
-      image: "/Feedback.jpg?height=400&width=600",
-      technologies: ["Solidity", "Web3.js", "React", "Node.js", "Ethereum"],
-      github: "#",
-      live: "#",
-    },
-    {
-      title: "Smart Home IoT Platform",
-      description:
-        "Comprehensive IoT platform for smart home automation with device management, energy monitoring, and AI-powered optimization for energy efficiency.",
-      image: "/work.avif?height=400&width=600",
-      technologies: ["Python", "MQTT", "React", "InfluxDB", "Raspberry Pi"],
-      github: "#",
-      live: "#",
     },
   ];
 
@@ -395,23 +352,22 @@ export default function Portfolio() {
           >
             {[
               {
+                title: "Software Development Engineer Intern",
+                company: "HSBC",
+                period: "January 2026 – June 2026",
+                location: "Pune",
+                description:
+                  "Developed an AI-powered RAG debugging platform using Java, Spring AOP, Neo4j, JavaFX, and Generative AI to automate dependency tracing and accelerate root cause analysis across enterprise repositories. Automated deployment sanity workflows with Playwright and RAG fallback mechanisms, reaching nearly 90% reliability and saving 15–25 minutes per instrument. Resolved 50+ OWASP and SAST security vulnerabilities through secure coding, input sanitization, and backend refactoring.",
+                technologies: ["Java", "Spring AOP", "Neo4j", "JavaFX", "Generative AI", "Playwright", "RAG"],
+              },
+              {
                 title: "Project Intern",
                 company: "Fractal",
-                period: "March 2025 – June 2025",
+                period: "March 2025 – September 2025",
                 location: "Mumbai",
                 description:
-                  "Developed a cloud optimization engine using AWS, GCP, and Azure APIs to detect and decommission over 1500+ unused resources, reducing monthly cloud costs by 30% through automated cleanups. Implemented a Flask backend and React frontend to integrate cloud APIs with internal tools such as CIDR and Server Inventory, improving cross-platform VM and network visibility. Built a cost monitoring system by integrating AWS Cost Explorer, Azure Consumption API, and GCP Billing API, enabling real-time spend analysis and accelerating anomaly detection by 20%. Created a unified cloud cost dashboard with usage charts, cost breakdowns, and alerting features, improving transparency and budget oversight across departments for 1000+ users.",
-                technologies: [
-                  "AWS",
-                  "GCP",
-                  "Azure",
-                  "Flask",
-                  "React",
-                  "CIDR",
-                  "Server Inventory",
-                  "Cost Explorer",
-                  "Billing API",
-                ],
+                  "Designed a cloud optimization engine using AWS, GCP, and Azure APIs to identify and decommission 1500+ unused resources, reducing monthly cloud costs by 30%. Built a unified React and Flask cloud cost dashboard with AWS Cost Explorer, Azure and GCP Billing APIs, and Server Inventory for real-time tracking and 20% faster anomaly detection. Automated cloud resource allocation, deallocation, and project manager reconciliation workflows.",
+                technologies: ["AWS", "GCP", "Azure", "Flask", "React", "Server Inventory", "Cost Explorer", "Billing APIs"],
               },
               {
                 title: "Full Stack Developer Intern",
