@@ -55,6 +55,7 @@ export default function Portfolio() {
 
   const navItems = [
     { name: "Home", id: "home" },
+    { name: "About", id: "about" },
     { name: "Work Experience", id: "experience" },
     { name: "Skills", id: "skills" },
     { name: "Projects", id: "projects" },
@@ -102,73 +103,52 @@ export default function Portfolio() {
   const projects = [
     {
       title: "ToneCraft – Emotionally Intelligent NFT Audiobook Marketplace",
-      description:
-        "Launched an NFT marketplace featuring emotionally expressive audiobook voices using TTS libraries and blockchain integration. Achieved 95% user satisfaction by enhancing audio quality through sentiment-aware synthesis with Amazon Polly.",
-      image: "/ToneCraft.jpg?height=400&width=600",
-      technologies: [
-        "Python",
-        "AWS",
-        "FastAPI",
-        "Flask",
-        "Solidity",
-        "IPFS",
-        "Node.js",
-        "ReactJS",
+      description: [
+        "Created an NFT marketplace for audiobooks using TTS libraries and blockchain integration, achieving a 95% user satisfaction rate.",
+        "Built a sentiment classifier using NLP techniques with 92% accuracy.",
+        "Improved audio output quality with emotion-aware Amazon Polly processing.",
       ],
+      image: "/ToneCraft.jpg?height=400&width=600",
+      technologies: ["Python", "AWS", "FastAPI", "Flask", "Solidity", "IPFS", "Node.js", "ReactJS"],
       github: "https://github.com/Anshulk2004/ToneCraft",
       live: "https://tone-craft-frontend.vercel.app/",
     },
     {
-      title: "FestHub – College Fest Event Manager",
-      description:
-        "Built a mobile app for event discovery and ticketing tailored for college fests. Includes user panels for profiles and bookings, an admin dashboard for event uploads, and a Gemini-powered chatbot. Integrated Firebase Auth and Stripe with 98% payment success.",
-      image: "/app.avif?height=400&width=600",
-      technologies: ["Flutter", "Dart", "Firebase", "Gemini", "Stripe"],
-      github: "https://github.com/Anshulk2004/Event_Booking_App",
-      live: "",
+      title: "Risk-0 Portfolio – Live Market Intelligence Platform",
+      description: [
+        "Programmed a live portfolio tracking platform with live market data integration, using Spring Boot for API routing and database operations.",
+        "Supported multi-asset allocation analysis and a financial learning playground.",
+        "Incorporated a market-focused, portfolio-aware Gemini AI chatbot delivering contextual stock insights with 90%+ response relevance.",
+        "Built a Python-based Qiskit quantum simulation module to demonstrate HFT behavior and stock covariance analysis, improving quantitative risk evaluation by 30%.",
+      ],
+      image: "",
+      technologies: ["Spring Boot", "Next.js", "TypeScript", "Python", "MySQL", "Gemini API", "Qiskit"],
+      github: "https://github.com/Anshulk2004/Frontend_Portfolio",
+      live: "https://portfolio-risk0.vercel.app/dashboard",
     },
     {
       title: "RideOn – AI-Powered Ride Sharing & Courier App",
-      description:
-        "Developed a full-stack ride sharing platform with booking, rentals, courier service, and driver onboarding. Features Stripe integration, OTP verification, dynamic Leaflet.js maps, and a Gemini-based chatbot. Serves 100+ users with real-time updates.",
-      image: "/RideOn.png?height=400&width=600",
-      technologies: [
-        "Python",
-        "Next.js",
-        "TypeScript",
-        "Leaflet.js",
-        "MongoDB",
-        "Gemini API",
+      description: [
+        "Engineered a ride-sharing application using Next.js with ride booking, rentals, courier services, and driver onboarding.",
+        "Integrated NextAuth and Stripe for authentication and payments.",
+        "Added OTP verification, a Gemini API chatbot, booking history, wallet management, and interactive Leaflet.js maps for 100+ users.",
       ],
+      image: "/RideOn.png?height=400&width=600",
+      technologies: ["Python", "Next.js", "TypeScript", "Leaflet.js", "MongoDB", "Gemini API"],
       github: "https://github.com/Anshulk2004/FJ-FE-R2-Anshul-Kumar-IIITPune",
       live: "https://fj-fe-r2-anshul-kumar-iiit-pune.vercel.app/",
     },
     {
-      title: "Real-Time Analytics Dashboard",
-      description:
-        "Interactive dashboard for business intelligence with real-time data visualization, custom reports, and predictive analytics using machine learning algorithms.",
-      image: "/app1.avif?height=400&width=600",
-      technologies: ["React", "D3.js", "Python", "FastAPI", "Redis"],
-      github: "#",
-      live: "#",
-    },
-    {
-      title: "Blockchain Voting System",
-      description:
-        "Secure and transparent voting system built on blockchain technology. Features include voter authentication, immutable vote records, and real-time result tracking.",
-      image: "/Feedback.jpg?height=400&width=600",
-      technologies: ["Solidity", "Web3.js", "React", "Node.js", "Ethereum"],
-      github: "#",
-      live: "#",
-    },
-    {
-      title: "Smart Home IoT Platform",
-      description:
-        "Comprehensive IoT platform for smart home automation with device management, energy monitoring, and AI-powered optimization for energy efficiency.",
-      image: "/work.avif?height=400&width=600",
-      technologies: ["Python", "MQTT", "React", "InfluxDB", "Raspberry Pi"],
-      github: "#",
-      live: "#",
+      title: "FestHub – College Fest Event Manager",
+      description: [
+        "Built a mobile app for event discovery and ticketing tailored for college fests.",
+        "Created user panels for profiles and bookings and an admin dashboard for event uploads.",
+        "Added a Gemini-powered chatbot and integrated Firebase Auth with Stripe, achieving a 98% payment success rate.",
+      ],
+      image: "",
+      technologies: ["Flutter", "Dart", "Firebase", "Gemini", "Stripe"],
+      github: "",
+      live: "",
     },
   ];
 
@@ -181,48 +161,28 @@ export default function Portfolio() {
 
   const skillGroups = [
     {
-      category: "Machine Learning 🤖",
-      skills: [
-        "🗣️ NLP",
-        "👁️ Computer Vision",
-        "🧠 Deep Learning",
-        "📊 Data Science",
-      ],
+      category: "Languages",
+      skills: ["Java", "TypeScript", "JavaScript", "Python", "C++", "Kotlin", "Dart"],
     },
     {
-      category: "Frontend Development 💻",
-      skills: [
-        "⚛️ React",
-        "🔺 Vue.js",
-        "🎨 Tailwind CSS",
-        "📱 Responsive Design",
-      ],
+      category: "Frameworks & Technologies",
+      skills: ["React.js", "Node.js", "Spring Boot", "Flask", "TensorFlow", "Generative AI", "AWS", "GCP", "Azure", "Docker"],
     },
     {
-      category: "App Development 📱",
-      skills: [
-        "📲 React Native",
-        "🐦 Flutter",
-        "🍎 iOS Development",
-        "🤖 Android Development",
-      ],
+      category: "Developer Tools & Databases",
+      skills: ["Git/GitHub", "Linux", "IntelliJ IDEA", "Android Studio", "MongoDB", "MySQL", "PostgreSQL"],
     },
     {
-      category: "Databases 🗄️",
-      skills: ["🐘 PostgreSQL", "🍃 MongoDB", "🔥 Firebase", "☁️ AWS DynamoDB"],
+      category: "Machine Learning & Data",
+      skills: ["NLP", "Computer Vision", "Deep Learning", "Data Science", "Machine Learning", "Qiskit"],
     },
     {
-      category: "Tools 🛠️",
-      skills: ["🐙 Git", "🐳 Docker", "☁️ AWS", "🔧 Kubernetes"],
+      category: "Additional Technologies",
+      skills: ["Tailwind CSS", "React Native", "Flutter", "Firebase", "AWS DynamoDB", "Kubernetes", "Solidity", "IPFS"],
     },
     {
-      category: "Coursework 📚",
-      skills: [
-        "🤖 Machine Learning",
-        "📊 Data Structures",
-        "🔐 Cybersecurity",
-        "☁️ Cloud Computing",
-      ],
+      category: "Coursework",
+      skills: ["Data Structures", "Cybersecurity", "Cloud Computing", "Blockchain"],
     },
   ];
 
@@ -237,9 +197,7 @@ export default function Portfolio() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
-        className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
-          isDark ? "bg-black/90 border-gray-800" : "bg-white/90 border-gray-200"
-        } backdrop-blur-md border-b`}
+        className="fixed top-0 z-50 w-full border-b border-gray-800 bg-black backdrop-blur-md transition-colors duration-300"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -248,14 +206,16 @@ export default function Portfolio() {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h1
+                className="text-xl font-bold text-white"
+              >
                 Anshul Kumar
               </h1>
             </motion.div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
+            <div className="hidden lg:block min-w-0">
+              <div className="ml-6 flex items-baseline gap-1 xl:gap-2">
                 {navItems.map((item, index) => (
                   <motion.button
                     key={item.id}
@@ -266,9 +226,7 @@ export default function Portfolio() {
                     whileTap={{ scale: 0.95 }}
                     onClick={() => scrollToSection(item.id)}
                     className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
-                      isDark
-                        ? "text-gray-300 hover:text-white hover:bg-gray-800"
-                        : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+                      "text-white hover:text-white hover:bg-gray-800"
                     }`}
                   >
                     {item.name}
@@ -277,7 +235,7 @@ export default function Portfolio() {
               </div>
             </div>
 
-            <div className="flex items-center space-x-4">
+            <div className="flex shrink-0 items-center gap-1 sm:gap-2">
               <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                 <Button
                   variant="ghost"
@@ -298,7 +256,7 @@ export default function Portfolio() {
               </motion.div>
 
               {/* Mobile menu button */}
-              <div className="md:hidden">
+              <div className="lg:hidden">
                 <motion.div
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -308,9 +266,7 @@ export default function Portfolio() {
                     size="icon"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     className={
-                      isDark
-                        ? "text-gray-300 hover:text-white hover:bg-gray-800"
-                        : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+                      "text-white hover:text-white hover:bg-gray-800"
                     }
                   >
                     {isMenuOpen ? (
@@ -331,7 +287,7 @@ export default function Portfolio() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className={`md:hidden ${
+            className={`lg:hidden ${
               isDark ? "bg-black border-gray-800" : "bg-white border-gray-200"
             } border-t`}
           >
@@ -379,7 +335,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                isDark ? "text-gray-400" : "text-gray-600"
+                "text-gray-300"
               } max-w-2xl mx-auto`}
             >
               My professional journey and the roles that have shaped my career
@@ -395,31 +351,44 @@ export default function Portfolio() {
           >
             {[
               {
+                title: "Software Engineer",
+                company: "HSBC",
+                period: "January 2026 – Present",
+                location: "Pune",
+                description: [
+                  "Contributed to a portal migration by moving 1,000+ transactions and automating the migration process.",
+                  "Worked across the Java backend, making rigorous API changes and supporting production issue resolution.",
+                  "Automated deployment sanity workflows using Playwright and RAG fallback mechanisms, achieving nearly 90% automation reliability and reducing manual time by 15–25 minutes per instrument.",
+                  "Resolved 50+ OWASP and SAST-identified security vulnerabilities, including unsafe object binding and privacy issues, through secure coding, input sanitization, and backend refactoring.",
+                  "Addressed password and URL compromise risks as part of improving application security compliance.",
+                ],
+                technologies: ["Java", "Spring AOP", "Neo4j", "JavaFX", "Generative AI", "Playwright", "RAG"],
+              },
+              {
                 title: "Project Intern",
                 company: "Fractal",
-                period: "March 2025 – June 2025",
+                period: "March 2025 – September 2025",
                 location: "Mumbai",
-                description:
-                  "Developed a cloud optimization engine using AWS, GCP, and Azure APIs to detect and decommission over 1500+ unused resources, reducing monthly cloud costs by 30% through automated cleanups. Implemented a Flask backend and React frontend to integrate cloud APIs with internal tools such as CIDR and Server Inventory, improving cross-platform VM and network visibility. Built a cost monitoring system by integrating AWS Cost Explorer, Azure Consumption API, and GCP Billing API, enabling real-time spend analysis and accelerating anomaly detection by 20%. Created a unified cloud cost dashboard with usage charts, cost breakdowns, and alerting features, improving transparency and budget oversight across departments for 1000+ users.",
-                technologies: [
-                  "AWS",
-                  "GCP",
-                  "Azure",
-                  "Flask",
-                  "React",
-                  "CIDR",
-                  "Server Inventory",
-                  "Cost Explorer",
-                  "Billing API",
+                description: [
+                  "Designed a cloud optimization engine using AWS, GCP, and Azure APIs to identify and decommission 1,500+ unused resources, reducing monthly cloud costs by 30%.",
+                  "Built a unified React and Flask cloud cost dashboard integrating AWS Cost Explorer, Azure and GCP Billing APIs, and Server Inventory.",
+                  "Enabled real-time cloud cost tracking and 20% faster anomaly detection.",
+                  "Automated cloud resource allocation, deallocation, and project manager reconciliation workflows.",
+                  "Improved operational efficiency and reduced manual cloud governance effort.",
                 ],
+                technologies: ["AWS", "GCP", "Azure", "Flask", "React", "Server Inventory", "Cost Explorer", "Billing APIs"],
               },
               {
                 title: "Full Stack Developer Intern",
                 company: "Oddminds Innovation (Startup)",
                 period: "August 2024 – November 2024",
                 location: "Remote",
-                description:
-                  "Optimized backend performance by implementing Firebase Storage, Node.js and Emulator suite, achieving 40% faster data retrieval and enhanced system scalability. Improved frontend features including Event Cards with role-based access, allowing authorized users to create, modify, and manage events, and developed an ELO-based matchmaking and recommendation system to optimize participant interactions.",
+                description: [
+                  "Optimized backend performance with Node.js, Firebase Storage, and the Emulator Suite, achieving nearly 40% faster data retrieval.",
+                  "Improved scalability and frontend event workflows with role-based access controls.",
+                  "Enabled authorized users to create, modify, and manage events.",
+                  "Developed an ELO-based matchmaking and recommendation system to improve participant interactions and content ranking.",
+                ],
                 technologies: [
                   "Firebase",
                   "Node.js",
@@ -433,8 +402,10 @@ export default function Portfolio() {
                 company: "Ozibook Tech Solutions Private Limited",
                 period: "May 2024 – July 2024",
                 location: "Remote",
-                description:
-                  "Developed automated web scraping solutions (LinkedIn) and data visualization tools (Power BI, Python, Excel dashboards) to identify 500+ business leads, increasing client contacts by 30% and reducing prospecting time by 45%.",
+                description: [
+                  "Developed automated LinkedIn web scraping solutions and data visualization tools using Power BI, Python, and Excel dashboards.",
+                  "Identified 500+ business leads, increasing client contacts by 30% and reducing prospecting time by 45%.",
+                ],
                 technologies: ["Python", "Power BI", "Excel", "Web Scraping"],
               },
             ].map((job, index) => (
@@ -476,13 +447,15 @@ export default function Portfolio() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p
+                    <ul
                       className={`${
                         isDark ? "text-gray-300" : "text-gray-700"
-                      } mb-4`}
+                      } mb-4 list-disc space-y-2 pl-5`}
                     >
-                      {job.description}
-                    </p>
+                      {job.description.map((point, pointIndex) => (
+                        <li key={pointIndex}>{point}</li>
+                      ))}
+                    </ul>
                     <div className="flex flex-wrap gap-2">
                       {job.technologies.map((tech, techIndex) => (
                         <Badge
@@ -521,7 +494,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                isDark ? "text-gray-400" : "text-gray-600"
+                "text-gray-300"
               } max-w-2xl mx-auto`}
             >
               The tools and technologies I use to bring ideas to life
@@ -602,7 +575,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                isDark ? "text-gray-400" : "text-gray-600"
+                "text-gray-300"
               } max-w-2xl mx-auto`}
             >
               A showcase of my recent work and personal projects
@@ -628,7 +601,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                isDark ? "text-gray-400" : "text-gray-600"
+                "text-gray-300"
               } max-w-2xl mx-auto`}
             >
               Milestones and recognition that mark my professional journey
@@ -739,7 +712,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                isDark ? "text-gray-400" : "text-gray-600"
+                "text-gray-300"
               } max-w-2xl mx-auto`}
             >
               Beyond coding - my involvement in community and personal interests
@@ -755,28 +728,24 @@ export default function Portfolio() {
           >
             {[
               {
-                title: "Sports Club | Head",
+                title: "Student Activity Council | Head",
                 description:
-                  "Organized Eklavya (Annual Sports Fest) twice with 500+ participants and hosted National Sports Day engaging 300+ students.",
-                icon: "🏆",
-              },
-              {
-                title: "localhost | Web3 and AI/ML Mentor",
-                description:
-                  "Conducted web development sessions and Web3 workshops for 200+ learners; organized two major hackathons to foster innovation.",
-                icon: "🧠",
+                  "Hosted Iconclave, the annual cultural and technical festival, along with entrepreneurship initiatives, campus events, and other student engagement programs.",
               },
               {
                 title: "E-Cell | Cluster Head",
                 description:
-                  "Led E-Summit 2k23 & 2k24 with 1,000+ attendees and organized multiple tech events to boost student engagement and entrepreneurship.",
-                icon: "🚀",
+                  "Led E-Summit 2k23 and 2k24 with 1,000+ attendees while organizing entrepreneurship and technology events that strengthened student engagement.",
               },
               {
-                title: "Quantnum | Event Management Head",
+                title: "localhost | Web3 and AI/ML Mentor",
                 description:
-                  "Managed an inter-college Mathematics competition celebrating National Mathematics Day with wide student participation.",
-                icon: "📐",
+                  "Conducted web development and Web3 sessions for 200+ learners and organized four major hackathons for students.",
+              },
+              {
+                title: "Sports Club | Head",
+                description:
+                  "Organized Eklavya, the annual sports fest, twice with 500+ participants and hosted National Sports Day for 300+ students.",
               },
             ].map((activity, index) => (
               <motion.div
@@ -793,12 +762,9 @@ export default function Portfolio() {
                   } hover:shadow-xl transition-all duration-300 h-full`}
                 >
                   <CardHeader>
-                    <div className="flex items-center space-x-3">
-                      <span className="text-3xl">{activity.icon}</span>
-                      <CardTitle className="text-lg">
-                        {activity.title}
-                      </CardTitle>
-                    </div>
+                    <CardTitle className="text-lg">
+                      {activity.title}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className={isDark ? "text-gray-300" : "text-gray-700"}>
@@ -827,7 +793,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                isDark ? "text-gray-400" : "text-gray-600"
+                "text-gray-300"
               } max-w-2xl mx-auto`}
             >
               I'm always open to discussing new opportunities and interesting
@@ -993,7 +959,7 @@ export default function Portfolio() {
                     >
                       <Button
                         type="submit"
-                        className={`w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transform transition-all duration-300 shadow-lg hover:shadow-xl`}
+                        className={`w-full bg-blue-600 hover:bg-blue-700 text-white transform transition-all duration-300 shadow-lg hover:shadow-xl`}
                       >
                         Send Message
                       </Button>
@@ -1008,9 +974,7 @@ export default function Portfolio() {
 
       {/* Enhanced Footer - Fixed Icons */}
       <motion.footer
-        className={`py-12 ${
-          isDark ? "bg-gray-900 border-gray-800" : "bg-gray-50 border-gray-200"
-        } border-t`}
+className="border-t border-gray-800 bg-black py-12 text-white"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -1025,12 +989,12 @@ export default function Portfolio() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h3 className={`text-xl font-bold mb-4 ${"text-white"}`}>
                 Anshul Kumar
               </h3>
               <p
                 className={`${
-                  isDark ? "text-gray-400" : "text-gray-600"
+                  "text-gray-300"
                 } mb-4 max-w-md`}
               >
                 Software Developer & Full Stack Developer passionate about creating
@@ -1074,9 +1038,7 @@ export default function Portfolio() {
                     <motion.button
                       onClick={() => scrollToSection(item.id)}
                       className={`${
-                        isDark
-                          ? "text-gray-400 hover:text-white"
-                          : "text-gray-600 hover:text-gray-900"
+                        "text-gray-300 hover:text-white"
                       } transition-colors duration-200`}
                       whileHover={{ x: 5 }}
                     >
@@ -1097,21 +1059,21 @@ export default function Portfolio() {
               <div className="space-y-2">
                 <p
                   className={`${
-                    isDark ? "text-gray-400" : "text-gray-600"
+                    "text-gray-300"
                   } text-sm`}
                 >
                   anshulwork0102@gmail.com
                 </p>
                 <p
                   className={`${
-                    isDark ? "text-gray-400" : "text-gray-600"
+                    "text-gray-300"
                   } text-sm`}
                 >
                   +91 9870803265
                 </p>
                 <p
                   className={`${
-                    isDark ? "text-gray-400" : "text-gray-600"
+                    "text-gray-300"
                   } text-sm`}
                 >
                   Pune, Maharashtra
@@ -1131,7 +1093,7 @@ export default function Portfolio() {
           >
             <p
               className={`${
-                isDark ? "text-gray-400" : "text-gray-600"
+                "text-gray-300"
               } text-sm`}
             >
               © {new Date().getFullYear()} Anshul Kumar. All rights reserved. 

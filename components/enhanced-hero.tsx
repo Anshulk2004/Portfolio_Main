@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Download, Github, Linkedin, Mail } from "lucide-react"
@@ -12,6 +13,8 @@ interface EnhancedHeroProps {
 }
 
 export function EnhancedHero({ isDark, scrollToSection }: EnhancedHeroProps) {
+  const [isBioExpanded, setIsBioExpanded] = useState(false)
+
   return (
     <section id="home" className="relative pt-16 min-h-screen flex items-center overflow-hidden">
       {/* Particles Background */}
@@ -63,7 +66,7 @@ export function EnhancedHero({ isDark, scrollToSection }: EnhancedHeroProps) {
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
                 <motion.span
-                  className={`inline-block text-lg ${isDark ? "text-blue-400" : "text-blue-600"} font-medium`}
+                  className={`inline-block text-lg ${isDark ? "text-slate-300" : "text-slate-600"} font-medium`}
                   animate={{ opacity: [0.5, 1, 0.5] }}
                   transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
                 >
@@ -78,18 +81,7 @@ export function EnhancedHero({ isDark, scrollToSection }: EnhancedHeroProps) {
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
                 <motion.span
-                  className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent"
-                  animate={{
-                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-                  }}
-                  transition={{
-                    duration: 5,
-                    repeat: Number.POSITIVE_INFINITY,
-                    ease: "linear",
-                  }}
-                  style={{
-                    backgroundSize: "200% 200%",
-                  }}
+                  className={isDark ? "text-slate-100" : "text-slate-900"}
                 >
                   Anshul Kumar
                 </motion.span>
@@ -115,9 +107,22 @@ export function EnhancedHero({ isDark, scrollToSection }: EnhancedHeroProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                A 4th-year B.Tech CSE student passionate about becoming a skilled Machine Learning or Software Engineer.
-I am proficient in data science, machine learning, and have hands-on experience with large language models, generative AI, and web technologies.
-Outside of tech, I enjoy solving puzzles, reading tech articles, and playing outdoor sports.
+                Hi, I&apos;m Anshul Kumar, a Software Engineer at HSBC and a B.Tech CSE graduate from IIIT Pune, with experience building data-driven, cloud-based, and enterprise software systems.{' '}
+                <button
+                  type="button"
+                  onClick={() => setIsBioExpanded((expanded) => !expanded)}
+                  aria-expanded={isBioExpanded}
+                  className={`underline underline-offset-4 transition-colors ${
+                    isDark ? "text-slate-200 hover:text-white" : "text-slate-700 hover:text-slate-950"
+                  }`}
+                >
+                  {isBioExpanded ? "Show less" : "Read more about me"}
+                </button>
+                {isBioExpanded && (
+                  <span className="mt-4 block">
+                    At HSBC, I currently work on technology migration projects, contributing to the transition and modernization of large-scale organizational systems. I have also had exposure to AI-focused work, gaining experience with applying AI concepts to practical engineering problems. Previously, I interned at Fractal.ai, where I worked on cloud-based automation and developed Python solutions integrated with AWS, GCP, and Azure, strengthening my understanding of production-grade cloud engineering. My technical interests include backend and full-stack development, data systems, cloud infrastructure, and machine learning, with exposure to LLMs and generative AI. I enjoy working close to real systems, solving practical engineering problems, and understanding how software and data systems operate at scale. Outside of work, I enjoy solving puzzles, reading tech articles, and staying active through outdoor sports. I&apos;m always keen to learn, build, and connect with people working on interesting technology and engineering problems.
+                  </span>
+                )}
               </motion.p>
             </div>
 
@@ -132,13 +137,13 @@ Outside of tech, I enjoy solving puzzles, reading tech articles, and playing out
                 whileTap={{ scale: 0.95 }}
               >
                 <a
-    href="https://drive.google.com/file/d/1yO1MNxntqfcRPdCAmQ4Wv33sMe3FYdi7/view"
+    href="https://drive.google.com/file/d/1snUKHF7wt0wFMItSeg50TyilmU1D-NiH/view?usp=sharing"
     target="_blank"
     rel="noopener noreferrer"
   >
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transform transition-all duration-300 shadow-lg"
+                  className="bg-slate-800 text-white hover:bg-slate-700 dark:bg-slate-200 dark:text-slate-950 dark:hover:bg-white transform transition-all duration-300 shadow-lg"
                 >
                   <Download className="mr-2 h-4 w-4" />
                   View Resume

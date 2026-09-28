@@ -10,7 +10,7 @@ import Image from "next/image"
 
 interface Project {
   title: string
-  description: string
+  description: string[]
   image: string
   technologies: string[]
   github: string
@@ -66,20 +66,26 @@ export function ProjectCarousel({ projects, isDark }: ProjectCarouselProps) {
           >
             <Card className={`${isDark ? "bg-gray-800 border-gray-700" : "bg-white border-gray-200"} overflow-hidden`}>
               <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="relative aspect-video lg:aspect-square">
-                  <Image
-                    src={projects[currentIndex].image || "/placeholder.svg"}
-                    alt={projects[currentIndex].title}
-                    fill
-                    className="object-cover"
-                  />
+                <div className="relative aspect-video bg-muted lg:aspect-square">
+                  {projects[currentIndex].image ? (
+                    <Image
+                      src={projects[currentIndex].image}
+                      alt={projects[currentIndex].title}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : null}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 </div>
                 <div className="p-8 flex flex-col justify-center">
                   <CardHeader className="p-0 mb-4">
                     <CardTitle className="text-2xl mb-2">{projects[currentIndex].title}</CardTitle>
                     <CardDescription className={`text-lg ${isDark ? "text-gray-300" : "text-gray-600"}`}>
-                      {projects[currentIndex].description}
+                      <ul className="list-disc space-y-2 pl-5">
+                        {projects[currentIndex].description.map((point, pointIndex) => (
+                          <li key={pointIndex}>{point}</li>
+                        ))}
+                      </ul>
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="p-0">
@@ -96,6 +102,7 @@ export function ProjectCarousel({ projects, isDark }: ProjectCarouselProps) {
                     </div>
                     <div className="flex space-x-4">
                       <Button
+                        asChild
                         variant="outline"
                         className={`${
                           isDark
@@ -103,10 +110,13 @@ export function ProjectCarousel({ projects, isDark }: ProjectCarouselProps) {
                             : "border-gray-300 text-gray-700 hover:bg-gray-50"
                         }`}
                       >
-                        <Github className="mr-2 h-4 w-4" />
-                        Code
+                        <a href={projects[currentIndex].github} target="_blank" rel="noreferrer">
+                          <Github className="mr-2 h-4 w-4" />
+                          Code
+                        </a>
                       </Button>
                       <Button
+                        asChild
                         variant="outline"
                         className={`${
                           isDark
@@ -114,8 +124,10 @@ export function ProjectCarousel({ projects, isDark }: ProjectCarouselProps) {
                             : "border-gray-300 text-gray-700 hover:bg-gray-50"
                         }`}
                       >
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Live Demo
+                        <a href={projects[currentIndex].live} target="_blank" rel="noreferrer">
+                          <ExternalLink className="mr-2 h-4 w-4" />
+                          Live Demo
+                        </a>
                       </Button>
                     </div>
                   </CardContent>
@@ -164,7 +176,7 @@ export function ProjectCarousel({ projects, isDark }: ProjectCarouselProps) {
       </div>
 
       {/* Thumbnail Preview */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
         {projects.map((project, index) => (
           <motion.div
             key={index}
