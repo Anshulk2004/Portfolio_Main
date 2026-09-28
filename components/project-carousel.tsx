@@ -66,13 +66,15 @@ export function ProjectCarousel({ projects, isDark }: ProjectCarouselProps) {
           >
             <Card className={`${isDark ? "bg-gray-800 border-gray-700" : "bg-white border-gray-200"} overflow-hidden`}>
               <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="relative aspect-video lg:aspect-square">
-                  <Image
-                    src={projects[currentIndex].image || "/placeholder.svg"}
-                    alt={projects[currentIndex].title}
-                    fill
-                    className="object-cover"
-                  />
+                <div className="relative aspect-video bg-muted lg:aspect-square">
+                  {projects[currentIndex].image ? (
+                    <Image
+                      src={projects[currentIndex].image}
+                      alt={projects[currentIndex].title}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : null}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 </div>
                 <div className="p-8 flex flex-col justify-center">

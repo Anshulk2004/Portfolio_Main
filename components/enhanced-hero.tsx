@@ -121,7 +121,7 @@ Outside of tech, I enjoy solving puzzles, reading tech articles, and playing out
                 whileTap={{ scale: 0.95 }}
               >
                 <a
-    href="https://drive.google.com/file/d/1yO1MNxntqfcRPdCAmQ4Wv33sMe3FYdi7/view"
+    href="https://drive.google.com/file/d/1snUKHF7wt0wFMItSeg50TyilmU1D-NiH/view?usp=sharing"
     target="_blank"
     rel="noopener noreferrer"
   >

@@ -115,15 +115,15 @@ export default function Portfolio() {
     {
       title: "Risk-0 Portfolio – Live Market Intelligence Platform",
       description: [
-        "Programmed a live portfolio tracking platform with live market data integration, multi-asset allocation analysis, and a financial learning playground.",
-        "Built Spring Boot API routing and database operations for the platform.",
-        "Added a portfolio-aware Gemini chatbot delivering contextual stock insights with 90%+ response relevance.",
-        "Integrated a Qiskit quantum simulation module to demonstrate HFT behavior and stock covariance analysis, improving quantitative risk evaluation by 30%.",
+        "Programmed a live portfolio tracking platform with live market data integration, using Spring Boot for API routing and database operations.",
+        "Supported multi-asset allocation analysis and a financial learning playground.",
+        "Incorporated a market-focused, portfolio-aware Gemini AI chatbot delivering contextual stock insights with 90%+ response relevance.",
+        "Built a Python-based Qiskit quantum simulation module to demonstrate HFT behavior and stock covariance analysis, improving quantitative risk evaluation by 30%.",
       ],
-      image: "/app1.avif?height=400&width=600",
+      image: "",
       technologies: ["Spring Boot", "Next.js", "TypeScript", "Python", "MySQL", "Gemini API", "Qiskit"],
-      github: "#",
-      live: "#",
+      github: "https://github.com/Anshulk2004/Frontend_Portfolio",
+      live: "https://portfolio-risk0.vercel.app/dashboard",
     },
     {
       title: "RideOn – AI-Powered Ride Sharing & Courier App",
@@ -721,28 +721,28 @@ export default function Portfolio() {
           >
             {[
               {
-                title: "Sports Club | Head",
+                title: "Student Activity Council | Head",
                 description:
-                  "Organized Eklavya (Annual Sports Fest) twice with 500+ participants and hosted National Sports Day engaging 300+ students.",
-                icon: "🏆",
-              },
-              {
-                title: "localhost | Web3 and AI/ML Mentor",
-                description:
-                  "Conducted web development sessions and Web3 workshops for 200+ learners; organized two major hackathons to foster innovation.",
-                icon: "🧠",
+                  "Hosted Iconclave, the annual cultural and technical festival, along with entrepreneurship initiatives, campus events, and other student engagement programs.",
+                icon: "SAC",
               },
               {
                 title: "E-Cell | Cluster Head",
                 description:
-                  "Led E-Summit 2k23 & 2k24 with 1,000+ attendees and organized multiple tech events to boost student engagement and entrepreneurship.",
-                icon: "🚀",
+                  "Led E-Summit 2k23 and 2k24 with 1,000+ attendees while organizing entrepreneurship and technology events that strengthened student engagement.",
+                icon: "E",
               },
               {
-                title: "Quantnum | Event Management Head",
+                title: "localhost | Web3 and AI/ML Mentor",
                 description:
-                  "Managed an inter-college Mathematics competition celebrating National Mathematics Day with wide student participation.",
-                icon: "📐",
+                  "Conducted web development and Web3 sessions for 200+ learners and organized four major hackathons for students.",
+                icon: "L",
+              },
+              {
+                title: "Sports Club | Head",
+                description:
+                  "Organized Eklavya, the annual sports fest, twice with 500+ participants and hosted National Sports Day for 300+ students.",
+                icon: "S",
               },
             ].map((activity, index) => (
               <motion.div
