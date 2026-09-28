@@ -78,18 +78,7 @@ export function EnhancedHero({ isDark, scrollToSection }: EnhancedHeroProps) {
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
                 <motion.span
-                  className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent"
-                  animate={{
-                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-                  }}
-                  transition={{
-                    duration: 5,
-                    repeat: Number.POSITIVE_INFINITY,
-                    ease: "linear",
-                  }}
-                  style={{
-                    backgroundSize: "200% 200%",
-                  }}
+                  className={isDark ? "text-slate-100" : "text-slate-900"}
                 >
                   Anshul Kumar
                 </motion.span>
@@ -138,7 +127,7 @@ Outside of tech, I enjoy solving puzzles, reading tech articles, and playing out
   >
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transform transition-all duration-300 shadow-lg"
+                  className="bg-slate-800 text-white hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white transform transition-all duration-300 shadow-lg"
                 >
                   <Download className="mr-2 h-4 w-4" />
                   View Resume

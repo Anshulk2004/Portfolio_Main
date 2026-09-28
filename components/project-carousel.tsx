@@ -10,7 +10,7 @@ import Image from "next/image"
 
 interface Project {
   title: string
-  description: string
+  description: string[]
   image: string
   technologies: string[]
   github: string
@@ -79,7 +79,11 @@ export function ProjectCarousel({ projects, isDark }: ProjectCarouselProps) {
                   <CardHeader className="p-0 mb-4">
                     <CardTitle className="text-2xl mb-2">{projects[currentIndex].title}</CardTitle>
                     <CardDescription className={`text-lg ${isDark ? "text-gray-300" : "text-gray-600"}`}>
-                      {projects[currentIndex].description}
+                      <ul className="list-disc space-y-2 pl-5">
+                        {projects[currentIndex].description.map((point, pointIndex) => (
+                          <li key={pointIndex}>{point}</li>
+                        ))}
+                      </ul>
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="p-0">

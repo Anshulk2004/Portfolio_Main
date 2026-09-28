@@ -102,8 +102,11 @@ export default function Portfolio() {
   const projects = [
     {
       title: "ToneCraft – Emotionally Intelligent NFT Audiobook Marketplace",
-      description:
-        "Created an NFT marketplace for audiobooks using TTS libraries and blockchain integration. Built a 92% accurate NLP sentiment classifier and improved audio output quality with emotion-aware Amazon Polly processing, achieving 95% user satisfaction.",
+      description: [
+        "Created an NFT marketplace for audiobooks using TTS libraries and blockchain integration, achieving a 95% user satisfaction rate.",
+        "Built a sentiment classifier using NLP techniques with 92% accuracy.",
+        "Improved audio output quality with emotion-aware Amazon Polly processing.",
+      ],
       image: "/ToneCraft.jpg?height=400&width=600",
       technologies: ["Python", "AWS", "FastAPI", "Flask", "Solidity", "IPFS", "Node.js", "ReactJS"],
       github: "https://github.com/Anshulk2004/ToneCraft",
@@ -111,8 +114,12 @@ export default function Portfolio() {
     },
     {
       title: "Risk-0 Portfolio – Live Market Intelligence Platform",
-      description:
-        "Built a live portfolio tracking platform with market data integration, multi-asset allocation analysis, and a financial learning playground. Added a portfolio-aware Gemini chatbot with 90%+ response relevance and a Qiskit quantum simulation module for HFT behavior and covariance analysis.",
+      description: [
+        "Programmed a live portfolio tracking platform with live market data integration, multi-asset allocation analysis, and a financial learning playground.",
+        "Built Spring Boot API routing and database operations for the platform.",
+        "Added a portfolio-aware Gemini chatbot delivering contextual stock insights with 90%+ response relevance.",
+        "Integrated a Qiskit quantum simulation module to demonstrate HFT behavior and stock covariance analysis, improving quantitative risk evaluation by 30%.",
+      ],
       image: "/app1.avif?height=400&width=600",
       technologies: ["Spring Boot", "Next.js", "TypeScript", "Python", "MySQL", "Gemini API", "Qiskit"],
       github: "#",
@@ -120,8 +127,11 @@ export default function Portfolio() {
     },
     {
       title: "RideOn – AI-Powered Ride Sharing & Courier App",
-      description:
-        "Engineered a ride-sharing application with ride booking, rentals, courier services, and driver onboarding. Added NextAuth, Stripe payments, OTP verification, a Gemini chatbot, wallet management, booking history, and interactive Leaflet.js maps for 100+ users.",
+      description: [
+        "Engineered a ride-sharing application using Next.js with ride booking, rentals, courier services, and driver onboarding.",
+        "Integrated NextAuth and Stripe for authentication and payments.",
+        "Added OTP verification, a Gemini API chatbot, booking history, wallet management, and interactive Leaflet.js maps for 100+ users.",
+      ],
       image: "/RideOn.png?height=400&width=600",
       technologies: ["Python", "Next.js", "TypeScript", "Leaflet.js", "MongoDB", "Gemini API"],
       github: "https://github.com/Anshulk2004/FJ-FE-R2-Anshul-Kumar-IIITPune",
@@ -138,48 +148,28 @@ export default function Portfolio() {
 
   const skillGroups = [
     {
-      category: "Machine Learning 🤖",
-      skills: [
-        "🗣️ NLP",
-        "👁️ Computer Vision",
-        "🧠 Deep Learning",
-        "📊 Data Science",
-      ],
+      category: "Languages",
+      skills: ["Java", "TypeScript", "JavaScript", "Python", "C++", "Kotlin", "Dart"],
     },
     {
-      category: "Frontend Development 💻",
-      skills: [
-        "⚛️ React",
-        "🔺 Vue.js",
-        "🎨 Tailwind CSS",
-        "📱 Responsive Design",
-      ],
+      category: "Frameworks & Technologies",
+      skills: ["React.js", "Node.js", "Spring Boot", "Flask", "TensorFlow", "Generative AI", "AWS", "GCP", "Azure", "Docker"],
     },
     {
-      category: "App Development 📱",
-      skills: [
-        "📲 React Native",
-        "🐦 Flutter",
-        "🍎 iOS Development",
-        "🤖 Android Development",
-      ],
+      category: "Developer Tools & Databases",
+      skills: ["Git/GitHub", "Linux", "IntelliJ IDEA", "Android Studio", "MongoDB", "MySQL", "PostgreSQL"],
     },
     {
-      category: "Databases 🗄️",
-      skills: ["🐘 PostgreSQL", "🍃 MongoDB", "🔥 Firebase", "☁️ AWS DynamoDB"],
+      category: "Machine Learning & Data",
+      skills: ["NLP", "Computer Vision", "Deep Learning", "Data Science", "Machine Learning", "Qiskit"],
     },
     {
-      category: "Tools 🛠️",
-      skills: ["🐙 Git", "🐳 Docker", "☁️ AWS", "🔧 Kubernetes"],
+      category: "Additional Technologies",
+      skills: ["Tailwind CSS", "React Native", "Flutter", "Firebase", "AWS DynamoDB", "Kubernetes", "Solidity", "IPFS"],
     },
     {
-      category: "Coursework 📚",
-      skills: [
-        "🤖 Machine Learning",
-        "📊 Data Structures",
-        "🔐 Cybersecurity",
-        "☁️ Cloud Computing",
-      ],
+      category: "Coursework",
+      skills: ["Data Structures", "Cybersecurity", "Cloud Computing", "Blockchain"],
     },
   ];
 
@@ -352,12 +342,17 @@ export default function Portfolio() {
           >
             {[
               {
-                title: "Software Development Engineer Intern",
+                title: "Software Engineer",
                 company: "HSBC",
-                period: "January 2026 – June 2026",
+                period: "January 2026 – Present",
                 location: "Pune",
-                description:
-                  "Developed an AI-powered RAG debugging platform using Java, Spring AOP, Neo4j, JavaFX, and Generative AI to automate dependency tracing and accelerate root cause analysis across enterprise repositories. Automated deployment sanity workflows with Playwright and RAG fallback mechanisms, reaching nearly 90% reliability and saving 15–25 minutes per instrument. Resolved 50+ OWASP and SAST security vulnerabilities through secure coding, input sanitization, and backend refactoring.",
+                description: [
+                  "Contributed to a portal migration by moving 1,000+ transactions and automating the migration process.",
+                  "Worked across the Java backend, making rigorous API changes and supporting production issue resolution.",
+                  "Automated deployment sanity workflows using Playwright and RAG fallback mechanisms, achieving nearly 90% automation reliability and reducing manual time by 15–25 minutes per instrument.",
+                  "Resolved 50+ OWASP and SAST-identified security vulnerabilities, including unsafe object binding and privacy issues, through secure coding, input sanitization, and backend refactoring.",
+                  "Addressed password and URL compromise risks as part of improving application security compliance.",
+                ],
                 technologies: ["Java", "Spring AOP", "Neo4j", "JavaFX", "Generative AI", "Playwright", "RAG"],
               },
               {
@@ -365,8 +360,13 @@ export default function Portfolio() {
                 company: "Fractal",
                 period: "March 2025 – September 2025",
                 location: "Mumbai",
-                description:
-                  "Designed a cloud optimization engine using AWS, GCP, and Azure APIs to identify and decommission 1500+ unused resources, reducing monthly cloud costs by 30%. Built a unified React and Flask cloud cost dashboard with AWS Cost Explorer, Azure and GCP Billing APIs, and Server Inventory for real-time tracking and 20% faster anomaly detection. Automated cloud resource allocation, deallocation, and project manager reconciliation workflows.",
+                description: [
+                  "Designed a cloud optimization engine using AWS, GCP, and Azure APIs to identify and decommission 1,500+ unused resources, reducing monthly cloud costs by 30%.",
+                  "Built a unified React and Flask cloud cost dashboard integrating AWS Cost Explorer, Azure and GCP Billing APIs, and Server Inventory.",
+                  "Enabled real-time cloud cost tracking and 20% faster anomaly detection.",
+                  "Automated cloud resource allocation, deallocation, and project manager reconciliation workflows.",
+                  "Improved operational efficiency and reduced manual cloud governance effort.",
+                ],
                 technologies: ["AWS", "GCP", "Azure", "Flask", "React", "Server Inventory", "Cost Explorer", "Billing APIs"],
               },
               {
@@ -374,8 +374,12 @@ export default function Portfolio() {
                 company: "Oddminds Innovation (Startup)",
                 period: "August 2024 – November 2024",
                 location: "Remote",
-                description:
-                  "Optimized backend performance by implementing Firebase Storage, Node.js and Emulator suite, achieving 40% faster data retrieval and enhanced system scalability. Improved frontend features including Event Cards with role-based access, allowing authorized users to create, modify, and manage events, and developed an ELO-based matchmaking and recommendation system to optimize participant interactions.",
+                description: [
+                  "Optimized backend performance with Node.js, Firebase Storage, and the Emulator Suite, achieving nearly 40% faster data retrieval.",
+                  "Improved scalability and frontend event workflows with role-based access controls.",
+                  "Enabled authorized users to create, modify, and manage events.",
+                  "Developed an ELO-based matchmaking and recommendation system to improve participant interactions and content ranking.",
+                ],
                 technologies: [
                   "Firebase",
                   "Node.js",
@@ -389,8 +393,10 @@ export default function Portfolio() {
                 company: "Ozibook Tech Solutions Private Limited",
                 period: "May 2024 – July 2024",
                 location: "Remote",
-                description:
-                  "Developed automated web scraping solutions (LinkedIn) and data visualization tools (Power BI, Python, Excel dashboards) to identify 500+ business leads, increasing client contacts by 30% and reducing prospecting time by 45%.",
+                description: [
+                  "Developed automated LinkedIn web scraping solutions and data visualization tools using Power BI, Python, and Excel dashboards.",
+                  "Identified 500+ business leads, increasing client contacts by 30% and reducing prospecting time by 45%.",
+                ],
                 technologies: ["Python", "Power BI", "Excel", "Web Scraping"],
               },
             ].map((job, index) => (
@@ -432,13 +438,15 @@ export default function Portfolio() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p
+                    <ul
                       className={`${
                         isDark ? "text-gray-300" : "text-gray-700"
-                      } mb-4`}
+                      } mb-4 list-disc space-y-2 pl-5`}
                     >
-                      {job.description}
-                    </p>
+                      {job.description.map((point, pointIndex) => (
+                        <li key={pointIndex}>{point}</li>
+                      ))}
+                    </ul>
                     <div className="flex flex-wrap gap-2">
                       {job.technologies.map((tech, techIndex) => (
                         <Badge
