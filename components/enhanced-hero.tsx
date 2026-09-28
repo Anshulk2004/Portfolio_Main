@@ -63,7 +63,7 @@ export function EnhancedHero({ isDark, scrollToSection }: EnhancedHeroProps) {
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
                 <motion.span
-                  className={`inline-block text-lg ${isDark ? "text-blue-400" : "text-blue-600"} font-medium`}
+                  className={`inline-block text-lg ${isDark ? "text-slate-300" : "text-slate-600"} font-medium`}
                   animate={{ opacity: [0.5, 1, 0.5] }}
                   transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
                 >
@@ -127,7 +127,7 @@ Outside of tech, I enjoy solving puzzles, reading tech articles, and playing out
   >
                 <Button
                   size="lg"
-                  className="bg-slate-800 text-white hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white transform transition-all duration-300 shadow-lg"
+                  className="bg-slate-800 text-white hover:bg-slate-700 dark:bg-slate-200 dark:text-slate-950 dark:hover:bg-white transform transition-all duration-300 shadow-lg"
                 >
                   <Download className="mr-2 h-4 w-4" />
                   View Resume

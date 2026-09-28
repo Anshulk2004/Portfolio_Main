@@ -195,14 +195,16 @@ export default function Portfolio() {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h1
+                className={`text-xl font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}
+              >
                 Anshul Kumar
               </h1>
             </motion.div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
+            <div className="hidden lg:block min-w-0">
+              <div className="ml-6 flex items-baseline gap-1 xl:gap-2">
                 {navItems.map((item, index) => (
                   <motion.button
                     key={item.id}
@@ -224,7 +226,7 @@ export default function Portfolio() {
               </div>
             </div>
 
-            <div className="flex items-center space-x-4">
+            <div className="flex shrink-0 items-center gap-1 sm:gap-2">
               <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                 <Button
                   variant="ghost"
@@ -245,7 +247,7 @@ export default function Portfolio() {
               </motion.div>
 
               {/* Mobile menu button */}
-              <div className="md:hidden">
+              <div className="lg:hidden">
                 <motion.div
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -278,7 +280,7 @@ export default function Portfolio() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className={`md:hidden ${
+            className={`lg:hidden ${
               isDark ? "bg-black border-gray-800" : "bg-white border-gray-200"
             } border-t`}
           >
