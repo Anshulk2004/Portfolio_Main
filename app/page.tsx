@@ -197,9 +197,7 @@ export default function Portfolio() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
-        className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
-          isDark ? "bg-black/90 border-gray-800" : "bg-white/90 border-gray-200"
-        } backdrop-blur-md border-b`}
+        className="fixed top-0 z-50 w-full border-b border-gray-800 bg-black backdrop-blur-md transition-colors duration-300"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -980,9 +978,7 @@ export default function Portfolio() {
 
       {/* Enhanced Footer - Fixed Icons */}
       <motion.footer
-        className={`py-12 ${
-          isDark ? "bg-gray-900 border-gray-800" : "bg-gray-50 border-gray-200"
-        } border-t`}
+className="border-t border-gray-800 bg-black py-12"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
