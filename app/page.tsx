@@ -320,7 +320,7 @@ export default function Portfolio() {
       <motion.section
         {...fadeInUp}
         id="experience"
-        className={`py-20 ${isDark ? "bg-gray-900" : "bg-gray-50"}`}
+        className={`portfolio-section py-20 ${isDark ? "text-white" : "text-slate-900"}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -480,7 +480,7 @@ export default function Portfolio() {
       </motion.section>
 
       {/* Skills Section - Reverted to Original */}
-      <motion.section {...fadeInUp} id="skills" className="py-20">
+      <motion.section {...fadeInUp} id="skills" className="portfolio-section-alt py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -560,7 +560,7 @@ export default function Portfolio() {
       <motion.section
         {...fadeInUp}
         id="projects"
-        className={`py-20 ${isDark ? "bg-gray-900" : "bg-gray-50"}`}
+        className={`portfolio-section py-20 ${isDark ? "text-white" : "text-slate-900"}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -587,7 +587,7 @@ export default function Portfolio() {
       </motion.section>
 
       {/* Achievements Section */}
-      <motion.section {...fadeInUp} id="achievements" className="py-20">
+      <motion.section {...fadeInUp} id="achievements" className="portfolio-section-alt py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -697,7 +697,7 @@ export default function Portfolio() {
       <motion.section
         {...fadeInUp}
         id="extracurricular"
-        className={`py-20 ${isDark ? "bg-gray-900" : "bg-gray-50"}`}
+        className={`portfolio-section py-20 ${isDark ? "text-white" : "text-slate-900"}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -779,7 +779,7 @@ export default function Portfolio() {
       </motion.section>
 
       {/* Contact Section */}
-      <motion.section {...fadeInUp} id="contact" className="py-20">
+      <motion.section {...fadeInUp} id="contact" className="portfolio-section-alt py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"

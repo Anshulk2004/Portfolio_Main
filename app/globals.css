@@ -55,9 +55,56 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: Georgia, "Times New Roman", serif;
   }
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+@layer components {
+  .portfolio-section {
+    position: relative;
+    isolation: isolate;
+    background: linear-gradient(180deg, #05070b 0%, #07101d 48%, #081a2d 100%);
+  }
+
+  .portfolio-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(circle at 50% 0%, rgb(37 99 235 / 0.08), transparent 42%);
+  }
+
+  .portfolio-section-alt {
+    position: relative;
+    isolation: isolate;
+    background: linear-gradient(180deg, #081a2d 0%, #071525 48%, #05070b 100%);
+  }
+
+  .portfolio-section-alt::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgb(15 23 42 / 0.18), transparent 35%, rgb(37 99 235 / 0.05));
+  }
+
+  .portfolio-section > .mx-auto,
+  .portfolio-section-alt > .mx-auto {
+    position: relative;
+  }
 }
