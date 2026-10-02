@@ -80,9 +80,6 @@ export function ProjectCarousel({ projects, isDark }: ProjectCarouselProps) {
                     className="object-contain p-8 transition-transform duration-500 group-hover:scale-105 sm:p-12"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
-                  <span className={`absolute left-5 top-5 rounded-full px-3 py-1 text-xs font-bold tracking-[0.18em] ${isDark ? "bg-white/10 text-blue-200" : "bg-white/75 text-blue-800"}`}>
-                    PROJECT {String(currentIndex + 1).padStart(2, "0")}
-                  </span>
                 </div>
                 <div className="flex flex-col justify-center p-5 sm:p-8">
                   <CardHeader className="mb-4 p-0">
@@ -214,9 +211,6 @@ export function ProjectCarousel({ projects, isDark }: ProjectCarouselProps) {
                   : "border-stone-900/10 bg-stone-900/[0.03] text-stone-600 hover:border-stone-900/25 hover:text-stone-900"
             }`}
           >
-            <span className="mb-1 block text-[10px] font-bold tracking-[0.2em] opacity-70">
-              {String(index + 1).padStart(2, "0")}
-            </span>
             <span className="block truncate text-xs font-semibold sm:text-sm">{project.title.split(" – ")[0]}</span>
           </button>
         ))}

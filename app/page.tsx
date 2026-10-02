@@ -11,8 +11,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Moon,
   Sun,
@@ -34,6 +32,9 @@ export default function Portfolio() {
   const [isDark, setIsDark] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [expandedExperiences, setExpandedExperiences] = useState<number[]>([]);
+  const [showAllSkills, setShowAllSkills] = useState(false);
+  const [showAllAchievements, setShowAllAchievements] = useState(false);
+  const [showAllActivities, setShowAllActivities] = useState(false);
 
   useEffect(() => {
     if (isDark) {
@@ -522,7 +523,11 @@ export default function Portfolio() {
             viewport={{ once: true }}
           >
             {skillGroups.map((skillGroup, index) => (
-              <motion.div key={index} variants={staggerItem}>
+              <motion.div
+                key={index}
+                variants={staggerItem}
+                className={index > 1 && !showAllSkills ? "hidden md:block" : ""}
+              >
                 <Card
                   className={`skill-group-card h-full overflow-hidden transition-all duration-300 hover:-translate-y-1 ${
                     isDark ? "bg-[#0a0a0a]/80 text-white" : "bg-[#f7eddf]/80 text-[#241d16]"
@@ -552,6 +557,17 @@ export default function Portfolio() {
               </motion.div>
             ))}
           </motion.div>
+          <button
+            type="button"
+            onClick={() => setShowAllSkills((visible) => !visible)}
+            className={`mx-auto mt-6 flex items-center rounded-full border px-5 py-2.5 text-sm font-semibold transition-colors md:hidden ${
+              isDark
+                ? "border-white/15 text-gray-200 hover:bg-white/10"
+                : "border-stone-900/15 text-stone-700 hover:bg-stone-900/5"
+            }`}
+          >
+            {showAllSkills ? "Show less" : "Show more skills"}
+          </button>
         </div>
       </motion.section>
 
@@ -606,9 +622,6 @@ export default function Portfolio() {
                 A mix of competitive milestones, academic opportunities, and certifications that reflect how I learn and build.
               </p>
             </div>
-            <span className={`text-sm font-medium ${isDark ? "text-gray-500" : "text-stone-500"}`}>
-              07 highlights
-            </span>
           </motion.div>
 
           <motion.div
@@ -663,7 +676,11 @@ export default function Portfolio() {
                 year: "2023",
               },
             ].map((achievement, index) => (
-              <motion.div key={index} variants={staggerItem} className="relative pl-0 md:pl-12">
+              <motion.div
+                key={index}
+                variants={staggerItem}
+                className={`relative pl-0 md:pl-12 ${index > 2 && !showAllAchievements ? "hidden md:block" : ""}`}
+              >
                 <span className={`absolute left-3 top-7 hidden h-4 w-4 -translate-x-1/2 rounded-full border-4 md:block ${isDark ? "border-black bg-blue-400" : "border-[#eadcc8] bg-blue-700"}`} aria-hidden="true" />
                 <Card
                   className={`h-full border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
@@ -692,6 +709,17 @@ export default function Portfolio() {
               </motion.div>
             ))}
           </motion.div>
+          <button
+            type="button"
+            onClick={() => setShowAllAchievements((visible) => !visible)}
+            className={`mx-auto mt-6 flex items-center rounded-full border px-5 py-2.5 text-sm font-semibold transition-colors md:hidden ${
+              isDark
+                ? "border-white/15 text-gray-200 hover:bg-white/10"
+                : "border-stone-900/15 text-stone-700 hover:bg-stone-900/5"
+            }`}
+          >
+            {showAllAchievements ? "Show less" : "Show more achievements"}
+          </button>
         </div>
       </motion.section>
 
@@ -774,7 +802,11 @@ export default function Portfolio() {
                 size: "md:col-span-5",
               },
             ].map((activity, index) => (
-              <motion.div key={index} variants={staggerItem} className={activity.size}>
+              <motion.div
+                key={index}
+                variants={staggerItem}
+                className={`${activity.size} ${index > 2 && !showAllActivities ? "hidden md:block" : ""}`}
+              >
                 <Card
                   className={`group relative h-full overflow-hidden border transition-all duration-300 hover:-translate-y-1 ${
                     isDark
@@ -808,6 +840,17 @@ export default function Portfolio() {
               </motion.div>
             ))}
           </motion.div>
+          <button
+            type="button"
+            onClick={() => setShowAllActivities((visible) => !visible)}
+            className={`mx-auto mt-6 flex items-center rounded-full border px-5 py-2.5 text-sm font-semibold transition-colors md:hidden ${
+              isDark
+                ? "border-white/15 text-gray-200 hover:bg-white/10"
+                : "border-stone-900/15 text-stone-700 hover:bg-stone-900/5"
+            }`}
+          >
+            {showAllActivities ? "Show less" : "Show more positions"}
+          </button>
         </div>
       </motion.section>
 
@@ -836,7 +879,7 @@ export default function Portfolio() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div
-              className="space-y-8"
+              className="space-y-8 text-center md:text-left"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -862,7 +905,7 @@ export default function Portfolio() {
                       color: "text-red-500",
                     },
                   ].map((item, index) => (
-                    <div key={index} className="flex items-center space-x-3">
+                    <div key={index} className="flex items-center justify-center space-x-3 md:justify-start">
                       <item.icon className={`h-5 w-5 ${item.color}`} />
                       <span>{item.text}</span>
                     </div>
@@ -872,7 +915,7 @@ export default function Portfolio() {
 
               <div>
                 <h4 className="text-lg font-semibold mb-4">Follow Me</h4>
-                <div className="flex space-x-4">
+                <div className="flex justify-center space-x-4 md:justify-start">
                   {[
                     { Icon: Github, href: "https://github.com/Anshulk2004" },
                     {
@@ -916,88 +959,40 @@ export default function Portfolio() {
               viewport={{ once: true }}
             >
               <Card
-                className={`${
+                className={`h-full overflow-hidden rounded-3xl border transition-all duration-300 ${
                   isDark
-                    ? "bg-gray-800 border-gray-700"
-                    : "bg-[#f4eadb] border-gray-200"
-                } hover:shadow-xl transition-all duration-300`}
+                    ? "border-white/10 bg-[#0a0a0a]/90"
+                    : "border-stone-900/10 bg-[#f7eddf]/90"
+                }`}
               >
-                <CardHeader>
-                  <CardTitle>Send me a message</CardTitle>
-                  <CardDescription>
-                    I'll get back to you as soon as possible
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <form className="space-y-4">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <motion.div whileFocus={{ scale: 1.02 }}>
-                        <label className="text-sm font-medium mb-2 block">
-                          Name
-                        </label>
-                        <Input
-                          placeholder="Your name"
-                          className={`${
-                            isDark
-                              ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400"
-                              : "bg-[#f4eadb] border-gray-300"
-                          } transition-all duration-300`}
-                        />
-                      </motion.div>
-                      <motion.div whileFocus={{ scale: 1.02 }}>
-                        <label className="text-sm font-medium mb-2 block">
-                          Email
-                        </label>
-                        <Input
-                          type="email"
-                          placeholder="your.email@example.com"
-                          className={`${
-                            isDark
-                              ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400"
-                              : "bg-[#f4eadb] border-gray-300"
-                          } transition-all duration-300`}
-                        />
-                      </motion.div>
-                    </div>
-                    <motion.div whileFocus={{ scale: 1.02 }}>
-                      <label className="text-sm font-medium mb-2 block">
-                        Subject
-                      </label>
-                      <Input
-                        placeholder="What's this about?"
-                        className={`${
-                          isDark
-                            ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400"
-                            : "bg-[#f4eadb] border-gray-300"
-                        } transition-all duration-300`}
-                      />
-                    </motion.div>
-                    <motion.div whileFocus={{ scale: 1.02 }}>
-                      <label className="text-sm font-medium mb-2 block">
-                        Message
-                      </label>
-                      <Textarea
-                        placeholder="Your message..."
-                        rows={5}
-                        className={`${
-                          isDark
-                            ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400"
-                            : "bg-[#f4eadb] border-gray-300"
-                        } transition-all duration-300`}
-                      />
-                    </motion.div>
-                    <motion.div
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
+                <CardContent className="flex h-full flex-col justify-between gap-8 p-6 sm:p-8">
+                  <div>
+                    <p className={`mb-3 text-xs font-bold uppercase tracking-[0.24em] ${isDark ? "text-blue-400" : "text-blue-700"}`}>
+                      Start a conversation
+                    </p>
+                    <h3 className="mb-4 text-2xl font-bold sm:text-3xl">
+                      Have an idea or an opportunity?
+                    </h3>
+                    <p className={`max-w-lg leading-7 ${isDark ? "text-gray-300" : "text-stone-700"}`}>
+                      I&apos;m always open to discussing thoughtful products, engineering challenges, and interesting collaborations.
+                    </p>
+                  </div>
+                  <div className="space-y-4">
+                    <a
+                      href="mailto:anshulwork0102@gmail.com?subject=Portfolio%20enquiry"
+                      className={`flex items-center justify-between rounded-2xl border px-4 py-4 transition-colors ${
+                        isDark
+                          ? "border-blue-400/30 bg-blue-400/10 text-blue-100 hover:bg-blue-400/20"
+                          : "border-blue-700/20 bg-blue-700/10 text-blue-900 hover:bg-blue-700/15"
+                      }`}
                     >
-                      <Button
-                        type="submit"
-                        className={`w-full bg-blue-600 hover:bg-blue-700 text-white transform transition-all duration-300 shadow-lg hover:shadow-xl`}
-                      >
-                        Send Message
-                      </Button>
-                    </motion.div>
-                  </form>
+                      <span className="flex items-center gap-3">
+                        <Mail className="h-5 w-5" />
+                        <span className="text-sm font-semibold sm:text-base">anshulwork0102@gmail.com</span>
+                      </span>
+                      <span aria-hidden="true" className="text-xl">↗</span>
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>
@@ -1059,6 +1054,7 @@ className="border-t border-gray-800 bg-black py-12 text-white"
             </motion.div>
 
             <motion.div
+              className="text-center md:text-left"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -1083,6 +1079,7 @@ className="border-t border-gray-800 bg-black py-12 text-white"
             </motion.div>
 
             <motion.div
+              className="text-center md:text-left"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
