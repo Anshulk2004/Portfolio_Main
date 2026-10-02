@@ -25,6 +25,7 @@ import {
   Linkedin,
   Twitter,
   Instagram,
+  ChevronDown,
 } from "lucide-react";
 import { EnhancedHero } from "@/components/enhanced-hero";
 import { ProjectCarousel } from "@/components/project-carousel";
@@ -32,6 +33,7 @@ import { ProjectCarousel } from "@/components/project-carousel";
 export default function Portfolio() {
   const [isDark, setIsDark] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [expandedExperiences, setExpandedExperiences] = useState<number[]>([]);
 
   useEffect(() => {
     if (isDark) {
@@ -51,6 +53,14 @@ export default function Portfolio() {
       element.scrollIntoView({ behavior: "smooth" });
     }
     setIsMenuOpen(false);
+  };
+
+  const toggleExperience = (index: number) => {
+    setExpandedExperiences((current) =>
+      current.includes(index)
+        ? current.filter((item) => item !== index)
+        : [...current, index],
+    );
   };
 
   const navItems = [
@@ -108,7 +118,7 @@ export default function Portfolio() {
         "Built a sentiment classifier using NLP techniques with 92% accuracy.",
         "Improved audio output quality with emotion-aware Amazon Polly processing.",
       ],
-      image: "/ToneCraft.jpg?height=400&width=600",
+      image: "/ToneCraft.png",
       technologies: ["Python", "AWS", "FastAPI", "Flask", "Solidity", "IPFS", "Node.js", "ReactJS"],
       github: "https://github.com/Anshulk2004/ToneCraft",
       live: "https://tone-craft-frontend.vercel.app/",
@@ -121,7 +131,7 @@ export default function Portfolio() {
         "Incorporated a market-focused, portfolio-aware Gemini AI chatbot delivering contextual stock insights with 90%+ response relevance.",
         "Built a Python-based Qiskit quantum simulation module to demonstrate HFT behavior and stock covariance analysis, improving quantitative risk evaluation by 30%.",
       ],
-      image: "",
+      image: "/ToneCraft.png",
       technologies: ["Spring Boot", "Next.js", "TypeScript", "Python", "MySQL", "Gemini API", "Qiskit"],
       github: "https://github.com/Anshulk2004/Frontend_Portfolio",
       live: "https://portfolio-risk0.vercel.app/dashboard",
@@ -133,7 +143,7 @@ export default function Portfolio() {
         "Integrated NextAuth and Stripe for authentication and payments.",
         "Added OTP verification, a Gemini API chatbot, booking history, wallet management, and interactive Leaflet.js maps for 100+ users.",
       ],
-      image: "/RideOn.png?height=400&width=600",
+      image: "/ToneCraft.png",
       technologies: ["Python", "Next.js", "TypeScript", "Leaflet.js", "MongoDB", "Gemini API"],
       github: "https://github.com/Anshulk2004/FJ-FE-R2-Anshul-Kumar-IIITPune",
       live: "https://fj-fe-r2-anshul-kumar-iiit-pune.vercel.app/",
@@ -145,57 +155,12 @@ export default function Portfolio() {
         "Created user panels for profiles and bookings and an admin dashboard for event uploads.",
         "Added a Gemini-powered chatbot and integrated Firebase Auth with Stripe, achieving a 98% payment success rate.",
       ],
-      image: "",
+      image: "/ToneCraft.png",
       technologies: ["Flutter", "Dart", "Firebase", "Gemini", "Stripe"],
       github: "",
       live: "",
     },
   ];
-
-  const techLogos: Record<string, string> = {
-    Java: "☕",
-    TypeScript: "TS",
-    JavaScript: "JS",
-    Python: "PY",
-    "C++": "C++",
-    Kotlin: "K",
-    Dart: "D",
-    "React.js": "⚛",
-    "Node.js": "N",
-    "Spring Boot": "SB",
-    Flask: "F",
-    TensorFlow: "TF",
-    "Generative AI": "AI",
-    AWS: "AWS",
-    GCP: "GCP",
-    Azure: "AZ",
-    Docker: "◆",
-    "Git/GitHub": "GH",
-    Linux: "⌁",
-    "IntelliJ IDEA": "IJ",
-    "Android Studio": "AS",
-    MongoDB: "M",
-    MySQL: "SQL",
-    PostgreSQL: "PG",
-    NLP: "NLP",
-    "Computer Vision": "CV",
-    "Deep Learning": "DL",
-    "Data Science": "DS",
-    "Machine Learning": "ML",
-    Qiskit: "Q",
-    "Tailwind CSS": "TW",
-    "React Native": "RN",
-    Flutter: "FL",
-    Firebase: "FB",
-    "AWS DynamoDB": "DB",
-    Kubernetes: "K8s",
-    Solidity: "◇",
-    IPFS: "IPFS",
-    "Data Structures": "DS",
-    Cybersecurity: "SEC",
-    "Cloud Computing": "☁",
-    Blockchain: "▦",
-  };
 
   const socialLinks = [
   { Icon: Github, url: "https://github.com/Anshulk2004" },
@@ -336,18 +301,18 @@ export default function Portfolio() {
               isDark ? "bg-black border-gray-800" : "bg-[#f4eadb] border-gray-200"
             } border-t`}
           >
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <div className="flex flex-col items-center px-4 pt-3 pb-4 sm:px-6">
               {navItems.map((item, index) => (
                 <motion.button
                   key={item.id}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-all duration-300 ${
+                  className={`w-full max-w-xs rounded-md px-3 py-2.5 text-center text-base font-medium transition-all duration-300 ${
                     isDark
-                      ? "text-gray-300 hover:text-white hover:bg-gray-800"
-                      : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+                      ? "text-gray-300 hover:bg-gray-800 hover:text-white"
+                      : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                   }`}
                 >
                   {item.name}
@@ -488,10 +453,23 @@ export default function Portfolio() {
                       </Badge>
                     </div>
                   </CardHeader>
-                  <CardContent className="sm:px-8 sm:pb-8">
-                    <ul className={`mb-6 grid gap-3 pl-0 text-sm leading-6 sm:grid-cols-2 sm:gap-x-8 ${isDark ? "border-blue-400/30 text-gray-300" : "border-blue-700/25 text-stone-700"}`}>
+                  <button
+                    type="button"
+                    onClick={() => toggleExperience(index)}
+                    aria-expanded={expandedExperiences.includes(index)}
+                    className={`mx-5 mb-4 flex items-center justify-between rounded-lg border px-4 py-3 text-sm font-semibold sm:hidden ${
+                      isDark
+                        ? "border-white/10 bg-white/[0.04] text-gray-200"
+                        : "border-stone-900/10 bg-stone-900/[0.04] text-stone-700"
+                    }`}
+                  >
+                    <span>{expandedExperiences.includes(index) ? "Hide details" : "See details"}</span>
+                    <ChevronDown className={`h-4 w-4 transition-transform ${expandedExperiences.includes(index) ? "rotate-180" : ""}`} />
+                  </button>
+                  <CardContent className={`${expandedExperiences.includes(index) ? "block" : "hidden"} sm:block sm:px-8 sm:pb-8`}>
+                    <ul className={`mb-6 grid gap-3 pl-5 text-sm leading-6 sm:grid-cols-2 sm:gap-x-8 ${isDark ? "text-gray-300" : "text-stone-700"}`}>
                       {job.description.map((point, pointIndex) => (
-                        <li key={pointIndex} className="relative before:absolute before:-left-[1.65rem] before:top-3 before:h-1.5 before:w-1.5 before:rounded-full before:bg-current">
+                        <li key={pointIndex} className="relative before:absolute before:-left-5 before:top-3 before:h-1.5 before:w-1.5 before:rounded-full before:bg-current">
                           {point}
                         </li>
                       ))}
@@ -515,72 +493,61 @@ export default function Portfolio() {
         </div>
       </motion.section>
 
-      {/* Skills Section - Reverted to Original */}
+      {/* Skills Section */}
       <motion.section {...fadeInUp} id="skills" className="portfolio-section-alt py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="text-center mb-16"
+            className="mb-12 max-w-2xl text-center md:text-left"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            <p className={`mb-3 text-xs font-bold uppercase tracking-[0.28em] ${isDark ? "text-blue-400" : "text-blue-700"}`}>
+              What I work with
+            </p>
+            <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
               Skills & Technologies
             </h2>
-            <p
-              className={`text-lg ${
-                isDark ? "text-gray-300" : "text-stone-700"
-              } max-w-2xl mx-auto`}
-            >
-              The tools and technologies I use to bring ideas to life
+            <p className={`text-base leading-7 ${isDark ? "text-gray-300" : "text-stone-700"}`}>
+              A focused toolkit for building thoughtful products, reliable systems, and data-informed experiences.
             </p>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"
+            className="grid grid-cols-1 gap-4 md:grid-cols-2"
             variants={staggerContainer}
             initial="initial"
             whileInView="whileInView"
             viewport={{ once: true }}
           >
             {skillGroups.map((skillGroup, index) => (
-              <motion.div
-                key={index}
-                variants={staggerItem}
-                whileHover={{ scale: 1.05, rotateY: 5 }}
-                transition={{ type: "spring", stiffness: 300, damping: 10 }}
-              >
+              <motion.div key={index} variants={staggerItem}>
                 <Card
-  className={`skill-group-card h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
-  isDark ? "bg-[#0a0a0a]/90 text-white" : "bg-[#f7eddf]/90 text-[#241d16]"
-  }`}
+                  className={`skill-group-card h-full overflow-hidden transition-all duration-300 hover:-translate-y-1 ${
+                    isDark ? "bg-[#0a0a0a]/80 text-white" : "bg-[#f7eddf]/80 text-[#241d16]"
+                  }`}
                 >
-  <CardHeader className="pb-4">
-  <div className="flex items-center justify-between gap-4">
-  <CardTitle className="text-xl">{skillGroup.category}</CardTitle>
-  <span className={`skill-count ${isDark ? "text-blue-300" : "text-blue-700"}`}>
-  {String(skillGroup.skills.length).padStart(2, "0")}
-  </span>
-  </div>
-  </CardHeader>
-  <CardContent>
-  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-1">
-  {skillGroup.skills.map((skill, skillIndex) => (
-  <motion.div
-  key={skillIndex}
-  whileHover={{ x: 4 }}
-  whileTap={{ scale: 0.98 }}
-  className={`skill-chip ${isDark ? "bg-white/[0.06] hover:bg-blue-500/15" : "bg-stone-900/[0.05] hover:bg-blue-700/10"}`}
-  >
-  <span className={`skill-logo ${isDark ? "bg-blue-400/15 text-blue-300" : "bg-blue-700/10 text-blue-800"}`} aria-hidden="true">
-  {techLogos[skill] ?? skill.slice(0, 2).toUpperCase()}
-  </span>
-  <span>{skill}</span>
-  </motion.div>
-  ))}
-  </div>
-  </CardContent>
+                  <CardContent className="flex flex-col gap-4 p-5 sm:flex-row sm:items-start sm:p-6">
+                    <div className="flex shrink-0 items-center gap-3 sm:w-44 sm:flex-col sm:items-start sm:gap-2">
+                      <span className={`h-2 w-2 rounded-full ${isDark ? "bg-blue-400" : "bg-blue-700"}`} aria-hidden="true" />
+                      <h3 className="text-sm font-bold uppercase tracking-[0.16em]">{skillGroup.category}</h3>
+                    </div>
+                    <div className="flex flex-1 flex-wrap gap-2">
+                      {skillGroup.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className={`rounded-full border px-3 py-1.5 text-sm transition-colors ${
+                            isDark
+                              ? "border-white/10 bg-white/[0.04] text-gray-200 hover:border-blue-400/50 hover:bg-blue-400/10"
+                              : "border-stone-900/10 bg-stone-900/[0.04] text-stone-700 hover:border-blue-700/30 hover:bg-blue-700/10"
+                          }`}
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
                 </Card>
               </motion.div>
             ))}
@@ -622,99 +589,102 @@ export default function Portfolio() {
       <motion.section {...fadeInUp} id="achievements" className="portfolio-section-alt py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="text-center mb-16"
+            className="mb-12 flex flex-col gap-6 text-center md:flex-row md:items-end md:justify-between md:text-left"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Achievements & Recognition
-            </h2>
-            <p
-              className={`text-lg ${
-                isDark ? "text-gray-300" : "text-stone-700"
-              } max-w-2xl mx-auto`}
-            >
-              Milestones and recognition that mark my professional journey
-            </p>
+            <div className="max-w-2xl">
+              <p className={`mb-3 text-xs font-bold uppercase tracking-[0.28em] ${isDark ? "text-blue-400" : "text-blue-700"}`}>
+                Milestones & recognition
+              </p>
+              <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
+                Achievements that keep me curious
+              </h2>
+              <p className={`text-base leading-7 ${isDark ? "text-gray-300" : "text-stone-700"}`}>
+                A mix of competitive milestones, academic opportunities, and certifications that reflect how I learn and build.
+              </p>
+            </div>
+            <span className={`text-sm font-medium ${isDark ? "text-gray-500" : "text-stone-500"}`}>
+              07 highlights
+            </span>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            className="relative grid grid-cols-1 gap-4 md:grid-cols-2"
             variants={staggerContainer}
             initial="initial"
             whileInView="whileInView"
             viewport={{ once: true }}
           >
+            <div className={`pointer-events-none absolute bottom-6 left-5 top-6 hidden w-px md:block ${isDark ? "bg-blue-400/25" : "bg-blue-700/20"}`} aria-hidden="true" />
             {[
-  {
-    title: "Geeks for Geeks – Solving for India Hackathon",
-    organization: "GeeksforGeeks",
-    description: "Selected in the Top 15 teams in the Western Regional Finals among nationwide participants.",
-    year: "2023",
-  },
-  {
-    title: "PEC Hacks – 36 Hrs Hackathon",
-    organization: "PEC College",
-    description: "Reached Top 50 out of 500+ teams in the final round with a real-world project demo.",
-    year: "2024",
-  },
-  {
-    title: "Citi Bank Ada Lovelace Hackathon",
-    organization: "Citi Bank",
-    description: "Secured 2nd position within the institute and placed in the Top 20 overall out of 300+ teams.",
-    year: "2025",
-  },
-  {
-    title: "Oracle GenAI Certified",
-    organization: "Oracle Cloud Infrastructure",
-    description: "Certified Generative AI Professional under Oracle Cloud Infrastructure 2024 program.",
-    year: "2024",
-  },
-]
-.map((achievement, index) => (
-              <motion.div
-                key={index}
-                variants={staggerItem}
-                whileHover={{ scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 300, damping: 10 }}
-              >
+              {
+                title: "Flipkart GRiD Semifinalist",
+                organization: "Flipkart",
+                description: "Advanced to the semifinal round of Flipkart GRiD 2025 through a competitive problem-solving and engineering challenge.",
+                year: "2025",
+              },
+              {
+                title: "Amazon ML Summer School",
+                organization: "Amazon",
+                description: "Selected for Amazon ML Summer School 2025, a focused learning program covering practical machine learning concepts and applications.",
+                year: "2025",
+              },
+              {
+                title: "Machine Learning & Deep Learning Certified",
+                organization: "Andrew Ng · Coursera",
+                description: "Completed Andrew Ng's machine learning and deep learning coursework through Coursera to strengthen foundations in modern AI.",
+                year: "Certified",
+              },
+              {
+                title: "Citi Bank Ada Lovelace Hackathon",
+                organization: "Citi Bank",
+                description: "Secured 2nd position within the institute and placed in the Top 20 overall out of 300+ teams.",
+                year: "2025",
+              },
+              {
+                title: "PEC Hacks – 36 Hrs Hackathon",
+                organization: "PEC College",
+                description: "Reached Top 50 out of 500+ teams in the final round with a real-world project demo.",
+                year: "2024",
+              },
+              {
+                title: "Oracle GenAI Certified",
+                organization: "Oracle Cloud Infrastructure",
+                description: "Certified Generative AI Professional under the Oracle Cloud Infrastructure 2024 program.",
+                year: "2024",
+              },
+              {
+                title: "Solving for India Hackathon",
+                organization: "GeeksforGeeks",
+                description: "Selected in the Top 15 teams in the Western Regional Finals among nationwide participants.",
+                year: "2023",
+              },
+            ].map((achievement, index) => (
+              <motion.div key={index} variants={staggerItem} className="relative pl-0 md:pl-12">
+                <span className={`absolute left-3 top-7 hidden h-4 w-4 -translate-x-1/2 rounded-full border-4 md:block ${isDark ? "border-black bg-blue-400" : "border-[#eadcc8] bg-blue-700"}`} aria-hidden="true" />
                 <Card
-                  className={`${
+                  className={`h-full border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
                     isDark
-                      ? "bg-gray-800 border-gray-700"
-                      : "bg-[#f4eadb] border-gray-200"
-                  } hover:shadow-xl transition-all duration-300 h-full`}
+                      ? "border-white/10 bg-[#0a0a0a]/80 text-white hover:border-blue-400/40"
+                      : "border-stone-900/10 bg-[#f7eddf]/80 text-[#241d16] hover:border-blue-700/30"
+                  }`}
                 >
-                  <CardHeader>
-                    <div className="flex justify-between items-start">
+                  <CardContent className="flex h-full flex-col gap-4 p-5 sm:p-6">
+                    <div className="flex items-start justify-between gap-4">
                       <div>
-                        <CardTitle className="text-xl">
-                          {achievement.title}
-                        </CardTitle>
-                        <CardDescription
-                          className={`text-lg ${
-                            isDark ? "text-blue-400" : "text-blue-600"
-                          }`}
-                        >
+                        <p className={`mb-2 text-xs font-bold uppercase tracking-[0.18em] ${isDark ? "text-blue-400" : "text-blue-700"}`}>
                           {achievement.organization}
-                        </CardDescription>
+                        </p>
+                        <h3 className="text-lg font-bold leading-snug sm:text-xl">{achievement.title}</h3>
                       </div>
-                      <Badge
-                        variant="secondary"
-                        className={`${
-                          isDark
-                            ? "bg-gray-700 text-gray-300"
-                            : "bg-gray-100 text-gray-700"
-                        }`}
-                      >
+                      <span className={`shrink-0 rounded-full px-3 py-1 text-xs font-semibold ${isDark ? "bg-white/10 text-gray-300" : "bg-stone-900/10 text-stone-700"}`}>
                         {achievement.year}
-                      </Badge>
+                      </span>
                     </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className={isDark ? "text-gray-300" : "text-gray-700"}>
+                    <p className={`text-sm leading-6 ${isDark ? "text-gray-300" : "text-stone-700"}`}>
                       {achievement.description}
                     </p>
                   </CardContent>
@@ -733,26 +703,30 @@ export default function Portfolio() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="text-center mb-16"
+            className="mb-12 flex flex-col gap-5 text-center md:flex-row md:items-end md:justify-between md:text-left"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Extra-curricular Activities
-            </h2>
-            <p
-              className={`text-lg ${
-                isDark ? "text-gray-300" : "text-stone-700"
-              } max-w-2xl mx-auto`}
-            >
-              Beyond coding - my involvement in community and personal interests
+            <div className="max-w-2xl">
+              <p className={`mb-3 text-xs font-bold uppercase tracking-[0.28em] ${isDark ? "text-blue-400" : "text-blue-700"}`}>
+                Outside the classroom
+              </p>
+              <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
+                Building communities, not just products
+              </h2>
+              <p className={`text-base leading-7 ${isDark ? "text-gray-300" : "text-stone-700"}`}>
+                Leadership, mentorship, and campus initiatives that have shaped how I collaborate and take ownership.
+              </p>
+            </div>
+            <p className={`max-w-xs text-left text-sm leading-6 md:text-right ${isDark ? "text-gray-500" : "text-stone-500"}`}>
+              From student leadership to peer learning and sport, these experiences keep me connected to people.
             </p>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            className="grid grid-cols-1 gap-4 md:grid-cols-12 md:grid-rows-2"
             variants={staggerContainer}
             initial="initial"
             whileInView="whileInView"
@@ -760,48 +734,75 @@ export default function Portfolio() {
           >
             {[
               {
-                title: "Student Activity Council | Head",
+                title: "Student Activity Council",
+                role: "Head",
+                period: "2025–2026",
                 description:
-                  "Hosted Iconclave, the annual cultural and technical festival, along with entrepreneurship initiatives, campus events, and other student engagement programs.",
+                  "Hosted Iconclave, the annual cultural and technical festival, along with entrepreneurship initiatives, campus events, and student engagement programs.",
+                size: "md:col-span-7 md:row-span-2",
               },
               {
-                title: "E-Cell | Cluster Head",
+                title: "E-Cell",
+                role: "Cluster Head",
+                period: "2024–2026",
                 description:
-                  "Led E-Summit 2k23 and 2k24 with 1,000+ attendees while organizing entrepreneurship and technology events that strengthened student engagement.",
+                  "Led E-Summit 2k23 and 2k24 with 1,000+ attendees while organizing entrepreneurship and technology events.",
+                size: "md:col-span-5",
               },
               {
-                title: "localhost | Web3 and AI/ML Mentor",
+                title: "localhost",
+                role: "Web3 and AI/ML Mentor",
+                period: "2024–2026",
                 description:
-                  "Conducted web development and Web3 sessions for 200+ learners and organized four major hackathons for students.",
+                  "Conducted web development and Web3 sessions for 200+ learners and organized four major student hackathons.",
+                size: "md:col-span-5",
               },
               {
-                title: "Sports Club | Head",
+                title: "Sports Club",
+                role: "Head",
+                period: "2025",
                 description:
                   "Organized Eklavya, the annual sports fest, twice with 500+ participants and hosted National Sports Day for 300+ students.",
+                size: "md:col-span-5",
+              },
+              {
+                title: "Inter-IIIT Contingent",
+                role: "Contingent Leader",
+                period: "2025",
+                description:
+                  "Started as a football team member and went on to lead the complete Inter-IIIT contingent to IIIT Gwalior. Managed funds, schedule clashes, itinerary, and shared resources for 95+ students, helping the contingent secure 4th place among 19 IIITs.",
+                size: "md:col-span-5",
               },
             ].map((activity, index) => (
-              <motion.div
-                key={index}
-                variants={staggerItem}
-                whileHover={{ scale: 1.03 }}
-                transition={{ type: "spring", stiffness: 300, damping: 10 }}
-              >
+              <motion.div key={index} variants={staggerItem} className={activity.size}>
                 <Card
-                  className={`${
+                  className={`group relative h-full overflow-hidden border transition-all duration-300 hover:-translate-y-1 ${
                     isDark
-                      ? "bg-gray-800 border-gray-700"
-                      : "bg-[#f4eadb] border-gray-200"
-                  } hover:shadow-xl transition-all duration-300 h-full`}
+                      ? "border-white/10 bg-[#0a0a0a]/80 text-white hover:border-blue-400/40"
+                      : "border-stone-900/10 bg-[#f7eddf]/80 text-[#241d16] hover:border-blue-700/30"
+                  }`}
                 >
-                  <CardHeader>
-                    <CardTitle className="text-lg">
-                      {activity.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className={isDark ? "text-gray-300" : "text-gray-700"}>
-                      {activity.description}
-                    </p>
+                  <div className={`absolute inset-x-0 top-0 h-1 ${isDark ? "bg-blue-400/70" : "bg-blue-700/70"}`} />
+                  <CardContent className={`relative flex h-full flex-col justify-between gap-10 p-6 sm:p-8 ${index === 0 ? "md:p-10" : ""}`}>
+                    <div className="flex items-start justify-between gap-5">
+                      <div>
+                        <p className={`mb-3 text-xs font-bold uppercase tracking-[0.2em] ${isDark ? "text-blue-400" : "text-blue-700"}`}>
+                          {activity.role}
+                        </p>
+                        <h3 className={`${index === 0 ? "text-2xl sm:text-3xl" : "text-xl"} font-bold leading-tight`}>
+                          {activity.title}
+                        </h3>
+                      </div>
+                      <span className={`whitespace-nowrap text-xs font-semibold tracking-[0.12em] ${isDark ? "text-gray-500" : "text-stone-500"}`}>
+                        {activity.period}
+                      </span>
+                    </div>
+                    <div>
+                      <div className={`mb-4 h-px w-12 transition-all duration-300 group-hover:w-20 ${isDark ? "bg-blue-400/70" : "bg-blue-700/70"}`} />
+                      <p className={`max-w-xl text-sm leading-7 ${isDark ? "text-gray-300" : "text-stone-700"}`}>
+                        {activity.description}
+                      </p>
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>

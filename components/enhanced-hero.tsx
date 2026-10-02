@@ -16,7 +16,7 @@ export function EnhancedHero({ isDark, scrollToSection }: EnhancedHeroProps) {
   const [isBioExpanded, setIsBioExpanded] = useState(false)
 
   return (
-    <section id="home" className="relative pt-16 min-h-screen flex items-center overflow-hidden">
+    <section id="home" className="relative flex min-h-screen items-center overflow-hidden pt-16">
       {/* Particles Background */}
       <ParticlesBackground isDark={isDark} />
 
@@ -51,10 +51,10 @@ export function EnhancedHero({ isDark, scrollToSection }: EnhancedHeroProps) {
         ))}
       </motion.div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20" style={{ zIndex: 4 }}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="relative mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 sm:py-20 sm:text-left lg:px-8" style={{ zIndex: 4 }}>
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-12">
           <motion.div
-            className="space-y-6"
+            className="mx-auto max-w-2xl space-y-6 sm:mx-0"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
@@ -102,7 +102,7 @@ export function EnhancedHero({ isDark, scrollToSection }: EnhancedHeroProps) {
               </motion.h2>
 
               <motion.p
-                className={`text-lg ${isDark ? "text-gray-400" : "text-gray-700"} max-w-2xl`}
+                className={`mx-auto max-w-2xl text-lg ${isDark ? "text-gray-400" : "text-gray-700"} sm:mx-0`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
@@ -127,7 +127,7 @@ export function EnhancedHero({ isDark, scrollToSection }: EnhancedHeroProps) {
             </div>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col items-center gap-4 sm:flex-row sm:items-start"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
@@ -168,7 +168,7 @@ export function EnhancedHero({ isDark, scrollToSection }: EnhancedHeroProps) {
             </motion.div>
 
             <motion.div
-  className="flex space-x-4 pt-4"
+  className="flex justify-center space-x-4 pt-4 sm:justify-start"
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
   transition={{ duration: 0.8, delay: 0.8 }}
@@ -211,7 +211,7 @@ export function EnhancedHero({ isDark, scrollToSection }: EnhancedHeroProps) {
               : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
           }`}
         >
-          <Icon className="h-5 w-5" />
+          <Icon className="h-6 w-6" />
         </Button>
       </a>
     </motion.div>
@@ -239,7 +239,7 @@ export function EnhancedHero({ isDark, scrollToSection }: EnhancedHeroProps) {
             >
               {/* Glowing Ring Effect */}
               <motion.div
-                className={`absolute inset-0 w-80 h-80 rounded-full ${
+                className={`absolute inset-0 h-64 w-64 rounded-full sm:h-80 sm:w-80 ${
                   isDark
                     ? "bg-gradient-to-r from-blue-500/20 to-purple-500/20"
                     : "bg-gradient-to-r from-blue-500/10 to-purple-500/10"
@@ -256,7 +256,7 @@ export function EnhancedHero({ isDark, scrollToSection }: EnhancedHeroProps) {
               />
 
               <motion.div
-                className={`relative w-80 h-80 rounded-full overflow-hidden ${
+                className={`relative h-64 w-64 overflow-hidden rounded-full sm:h-80 sm:w-80 ${
                   isDark ? "bg-gray-800" : "bg-gray-200"
                 } flex items-center justify-center shadow-2xl border-4 ${
                   isDark ? "border-gray-700" : "border-gray-300"
