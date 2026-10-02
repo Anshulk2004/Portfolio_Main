@@ -189,7 +189,7 @@ export default function Portfolio() {
   return (
     <div
       className={`min-h-screen transition-colors duration-300 ${
-        isDark ? "dark bg-black text-white" : "bg-white text-gray-900"
+        isDark ? "dark bg-black text-white" : "bg-[#eadcc8] text-[#241d16]"
       }`}
     >
       {/* Navigation */}
@@ -288,7 +288,7 @@ export default function Portfolio() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className={`lg:hidden ${
-              isDark ? "bg-black border-gray-800" : "bg-white border-gray-200"
+              isDark ? "bg-black border-gray-800" : "bg-[#f4eadb] border-gray-200"
             } border-t`}
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -419,7 +419,7 @@ export default function Portfolio() {
                   className={`${
                     isDark
                       ? "bg-gray-800 border-gray-700"
-                      : "bg-white border-gray-200"
+                      : "bg-[#f4eadb] border-gray-200"
                   } hover:shadow-xl transition-all duration-300`}
                 >
                   <CardHeader>
@@ -519,7 +519,7 @@ export default function Portfolio() {
                   className={`${
                     isDark
                       ? "bg-gray-800 border-gray-700"
-                      : "bg-white border-gray-200"
+                      : "bg-[#f4eadb] border-gray-200"
                   } h-full hover:shadow-xl transition-all duration-300`}
                 >
                   <CardHeader>
@@ -652,7 +652,7 @@ export default function Portfolio() {
                   className={`${
                     isDark
                       ? "bg-gray-800 border-gray-700"
-                      : "bg-white border-gray-200"
+                      : "bg-[#f4eadb] border-gray-200"
                   } hover:shadow-xl transition-all duration-300 h-full`}
                 >
                   <CardHeader>
@@ -758,7 +758,7 @@ export default function Portfolio() {
                   className={`${
                     isDark
                       ? "bg-gray-800 border-gray-700"
-                      : "bg-white border-gray-200"
+                      : "bg-[#f4eadb] border-gray-200"
                   } hover:shadow-xl transition-all duration-300 h-full`}
                 >
                   <CardHeader>
@@ -886,7 +886,7 @@ export default function Portfolio() {
                 className={`${
                   isDark
                     ? "bg-gray-800 border-gray-700"
-                    : "bg-white border-gray-200"
+                    : "bg-[#f4eadb] border-gray-200"
                 } hover:shadow-xl transition-all duration-300`}
               >
                 <CardHeader>
@@ -907,7 +907,7 @@ export default function Portfolio() {
                           className={`${
                             isDark
                               ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400"
-                              : "bg-white border-gray-300"
+                              : "bg-[#f4eadb] border-gray-300"
                           } transition-all duration-300`}
                         />
                       </motion.div>
@@ -921,7 +921,7 @@ export default function Portfolio() {
                           className={`${
                             isDark
                               ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400"
-                              : "bg-white border-gray-300"
+                              : "bg-[#f4eadb] border-gray-300"
                           } transition-all duration-300`}
                         />
                       </motion.div>
@@ -935,7 +935,7 @@ export default function Portfolio() {
                         className={`${
                           isDark
                             ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400"
-                            : "bg-white border-gray-300"
+                            : "bg-[#f4eadb] border-gray-300"
                         } transition-all duration-300`}
                       />
                     </motion.div>
@@ -949,7 +949,7 @@ export default function Portfolio() {
                         className={`${
                           isDark
                             ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400"
-                            : "bg-white border-gray-300"
+                            : "bg-[#f4eadb] border-gray-300"
                         } transition-all duration-300`}
                       />
                     </motion.div>

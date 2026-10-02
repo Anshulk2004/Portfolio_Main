@@ -4,24 +4,24 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --background: 36 39% 90%;
+    --foreground: 24 24% 13%;
+    --card: 36 42% 94%;
+    --card-foreground: 24 24% 13%;
+    --popover: 36 42% 94%;
+    --popover-foreground: 24 24% 13%;
     --primary: 221.2 83.2% 53.3%;
     --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 84% 4.9%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 84% 4.9%;
+    --secondary: 34 35% 84%;
+    --secondary-foreground: 24 24% 13%;
+    --muted: 34 35% 84%;
+    --muted-foreground: 24 12% 36%;
+    --accent: 34 35% 84%;
+    --accent-foreground: 24 24% 13%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 32 25% 76%;
+    --input: 32 25% 76%;
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.75rem;
   }
@@ -73,34 +73,31 @@ html {
 }
 
 @layer components {
-  .portfolio-section {
-    position: relative;
-    isolation: isolate;
-    background: linear-gradient(180deg, #05070b 0%, #07101d 48%, #081a2d 100%);
-  }
-
-  .portfolio-section::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background: radial-gradient(circle at 50% 0%, rgb(37 99 235 / 0.08), transparent 42%);
-  }
-
+  .portfolio-section,
   .portfolio-section-alt {
     position: relative;
     isolation: isolate;
-    background: linear-gradient(180deg, #081a2d 0%, #071525 48%, #05070b 100%);
+    background: linear-gradient(180deg, #efe4d2 0%, #eadbc4 52%, #e6d5bb 100%);
   }
 
+  .portfolio-section::after,
   .portfolio-section-alt::before {
     content: "";
     position: absolute;
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background: linear-gradient(180deg, rgb(15 23 42 / 0.18), transparent 35%, rgb(37 99 235 / 0.05));
+    background: radial-gradient(circle at 50% 0%, rgb(255 255 255 / 0.34), transparent 44%);
+  }
+
+  .dark .portfolio-section,
+  .dark .portfolio-section-alt {
+    background: linear-gradient(180deg, #000 0%, #050505 52%, #090909 100%);
+  }
+
+  .dark .portfolio-section::after,
+  .dark .portfolio-section-alt::before {
+    background: radial-gradient(circle at 50% 0%, rgb(37 99 235 / 0.08), transparent 42%);
   }
 
   .portfolio-section > .mx-auto,
