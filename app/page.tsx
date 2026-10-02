@@ -335,7 +335,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                "text-gray-300"
+                isDark ? "text-gray-300" : "text-stone-700"
               } max-w-2xl mx-auto`}
             >
               My professional journey and the roles that have shaped my career
@@ -494,7 +494,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                "text-gray-300"
+                isDark ? "text-gray-300" : "text-stone-700"
               } max-w-2xl mx-auto`}
             >
               The tools and technologies I use to bring ideas to life
@@ -575,7 +575,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                "text-gray-300"
+                isDark ? "text-gray-300" : "text-stone-700"
               } max-w-2xl mx-auto`}
             >
               A showcase of my recent work and personal projects
@@ -601,7 +601,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                "text-gray-300"
+                isDark ? "text-gray-300" : "text-stone-700"
               } max-w-2xl mx-auto`}
             >
               Milestones and recognition that mark my professional journey
@@ -712,7 +712,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                "text-gray-300"
+                isDark ? "text-gray-300" : "text-stone-700"
               } max-w-2xl mx-auto`}
             >
               Beyond coding - my involvement in community and personal interests
@@ -793,7 +793,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                "text-gray-300"
+                isDark ? "text-gray-300" : "text-stone-700"
               } max-w-2xl mx-auto`}
             >
               I'm always open to discussing new opportunities and interesting
