@@ -152,6 +152,51 @@ export default function Portfolio() {
     },
   ];
 
+  const techLogos: Record<string, string> = {
+    Java: "☕",
+    TypeScript: "TS",
+    JavaScript: "JS",
+    Python: "PY",
+    "C++": "C++",
+    Kotlin: "K",
+    Dart: "D",
+    "React.js": "⚛",
+    "Node.js": "N",
+    "Spring Boot": "SB",
+    Flask: "F",
+    TensorFlow: "TF",
+    "Generative AI": "AI",
+    AWS: "AWS",
+    GCP: "GCP",
+    Azure: "AZ",
+    Docker: "◆",
+    "Git/GitHub": "GH",
+    Linux: "⌁",
+    "IntelliJ IDEA": "IJ",
+    "Android Studio": "AS",
+    MongoDB: "M",
+    MySQL: "SQL",
+    PostgreSQL: "PG",
+    NLP: "NLP",
+    "Computer Vision": "CV",
+    "Deep Learning": "DL",
+    "Data Science": "DS",
+    "Machine Learning": "ML",
+    Qiskit: "Q",
+    "Tailwind CSS": "TW",
+    "React Native": "RN",
+    Flutter: "FL",
+    Firebase: "FB",
+    "AWS DynamoDB": "DB",
+    Kubernetes: "K8s",
+    Solidity: "◇",
+    IPFS: "IPFS",
+    "Data Structures": "DS",
+    Cybersecurity: "SEC",
+    "Cloud Computing": "☁",
+    Blockchain: "▦",
+  };
+
   const socialLinks = [
   { Icon: Github, url: "https://github.com/Anshulk2004" },
   { Icon: Linkedin, url: "https://www.linkedin.com/in/anshul-kumar-627001250/" },
@@ -444,7 +489,7 @@ export default function Portfolio() {
                     </div>
                   </CardHeader>
                   <CardContent className="sm:px-8 sm:pb-8">
-                    <ul className={`mb-6 grid gap-3 border-l-2 pl-5 text-sm leading-6 sm:grid-cols-2 sm:gap-x-8 ${isDark ? "border-blue-400/30 text-gray-300" : "border-blue-700/25 text-stone-700"}`}>
+                    <ul className={`mb-6 grid gap-3 pl-0 text-sm leading-6 sm:grid-cols-2 sm:gap-x-8 ${isDark ? "border-blue-400/30 text-gray-300" : "border-blue-700/25 text-stone-700"}`}>
                       {job.description.map((point, pointIndex) => (
                         <li key={pointIndex} className="relative before:absolute before:-left-[1.65rem] before:top-3 before:h-1.5 before:w-1.5 before:rounded-full before:bg-current">
                           {point}
@@ -493,7 +538,7 @@ export default function Portfolio() {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"
             variants={staggerContainer}
             initial="initial"
             whileInView="whileInView"
@@ -507,39 +552,35 @@ export default function Portfolio() {
                 transition={{ type: "spring", stiffness: 300, damping: 10 }}
               >
                 <Card
-                  className={`${
-                    isDark
-                      ? "bg-gray-800 border-gray-700"
-                      : "bg-[#f4eadb] border-gray-200"
-                  } h-full hover:shadow-xl transition-all duration-300`}
+  className={`skill-group-card h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+  isDark ? "bg-[#0a0a0a]/90 text-white" : "bg-[#f7eddf]/90 text-[#241d16]"
+  }`}
                 >
-                  <CardHeader>
-                    <CardTitle className="text-xl">
-                      {skillGroup.category}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2">
-                      {skillGroup.skills.map((skill, skillIndex) => (
-                        <motion.div
-                          key={skillIndex}
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <Badge
-                            variant="secondary"
-                            className={`${
-                              isDark
-                                ? "bg-gray-700 text-gray-300 hover:bg-gray-600"
-                                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                            } transition-all duration-200 cursor-pointer`}
-                          >
-                            {skill}
-                          </Badge>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </CardContent>
+  <CardHeader className="pb-4">
+  <div className="flex items-center justify-between gap-4">
+  <CardTitle className="text-xl">{skillGroup.category}</CardTitle>
+  <span className={`skill-count ${isDark ? "text-blue-300" : "text-blue-700"}`}>
+  {String(skillGroup.skills.length).padStart(2, "0")}
+  </span>
+  </div>
+  </CardHeader>
+  <CardContent>
+  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-1">
+  {skillGroup.skills.map((skill, skillIndex) => (
+  <motion.div
+  key={skillIndex}
+  whileHover={{ x: 4 }}
+  whileTap={{ scale: 0.98 }}
+  className={`skill-chip ${isDark ? "bg-white/[0.06] hover:bg-blue-500/15" : "bg-stone-900/[0.05] hover:bg-blue-700/10"}`}
+  >
+  <span className={`skill-logo ${isDark ? "bg-blue-400/15 text-blue-300" : "bg-blue-700/10 text-blue-800"}`} aria-hidden="true">
+  {techLogos[skill] ?? skill.slice(0, 2).toUpperCase()}
+  </span>
+  <span>{skill}</span>
+  </motion.div>
+  ))}
+  </div>
+  </CardContent>
                 </Card>
               </motion.div>
             ))}
