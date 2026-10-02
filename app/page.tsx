@@ -152,6 +152,51 @@ export default function Portfolio() {
     },
   ];
 
+  const techLogos: Record<string, string> = {
+    Java: "☕",
+    TypeScript: "TS",
+    JavaScript: "JS",
+    Python: "PY",
+    "C++": "C++",
+    Kotlin: "K",
+    Dart: "D",
+    "React.js": "⚛",
+    "Node.js": "N",
+    "Spring Boot": "SB",
+    Flask: "F",
+    TensorFlow: "TF",
+    "Generative AI": "AI",
+    AWS: "AWS",
+    GCP: "GCP",
+    Azure: "AZ",
+    Docker: "◆",
+    "Git/GitHub": "GH",
+    Linux: "⌁",
+    "IntelliJ IDEA": "IJ",
+    "Android Studio": "AS",
+    MongoDB: "M",
+    MySQL: "SQL",
+    PostgreSQL: "PG",
+    NLP: "NLP",
+    "Computer Vision": "CV",
+    "Deep Learning": "DL",
+    "Data Science": "DS",
+    "Machine Learning": "ML",
+    Qiskit: "Q",
+    "Tailwind CSS": "TW",
+    "React Native": "RN",
+    Flutter: "FL",
+    Firebase: "FB",
+    "AWS DynamoDB": "DB",
+    Kubernetes: "K8s",
+    Solidity: "◇",
+    IPFS: "IPFS",
+    "Data Structures": "DS",
+    Cybersecurity: "SEC",
+    "Cloud Computing": "☁",
+    Blockchain: "▦",
+  };
+
   const socialLinks = [
   { Icon: Github, url: "https://github.com/Anshulk2004" },
   { Icon: Linkedin, url: "https://www.linkedin.com/in/anshul-kumar-627001250/" },
@@ -189,7 +234,7 @@ export default function Portfolio() {
   return (
     <div
       className={`min-h-screen transition-colors duration-300 ${
-        isDark ? "dark bg-black text-white" : "bg-white text-gray-900"
+        isDark ? "dark bg-black text-white" : "bg-[#eadcc8] text-[#241d16]"
       }`}
     >
       {/* Navigation */}
@@ -288,7 +333,7 @@ export default function Portfolio() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className={`lg:hidden ${
-              isDark ? "bg-black border-gray-800" : "bg-white border-gray-200"
+              isDark ? "bg-black border-gray-800" : "bg-[#f4eadb] border-gray-200"
             } border-t`}
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -320,7 +365,7 @@ export default function Portfolio() {
       <motion.section
         {...fadeInUp}
         id="experience"
-        className={`py-20 ${isDark ? "bg-gray-900" : "bg-gray-50"}`}
+        className={`portfolio-section py-20 ${isDark ? "text-white" : "text-slate-900"}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -335,7 +380,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                "text-gray-300"
+                isDark ? "text-gray-300" : "text-stone-700"
               } max-w-2xl mx-auto`}
             >
               My professional journey and the roles that have shaped my career
@@ -412,48 +457,43 @@ export default function Portfolio() {
               <motion.div
                 key={index}
                 variants={staggerItem}
-                whileHover={{ scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                className="experience-entry"
               >
+                <div className="experience-marker" aria-hidden="true">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                </div>
                 <Card
-                  className={`${
+                  className={`experience-card ${
                     isDark
-                      ? "bg-gray-800 border-gray-700"
-                      : "bg-white border-gray-200"
-                  } hover:shadow-xl transition-all duration-300`}
+                      ? "bg-[#0a0a0a]/90 text-white shadow-black/30"
+                      : "bg-[#f7eddf]/90 text-[#241d16] shadow-stone-900/10"
+                  } hover:-translate-y-1 hover:shadow-2xl transition-all duration-300`}
                 >
-                  <CardHeader>
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                  <CardHeader className="gap-4 pb-4 sm:px-8 sm:pt-8">
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                       <div>
-                        <CardTitle className="text-xl">{job.title}</CardTitle>
-                        <CardDescription
-                          className={`text-lg ${
-                            isDark ? "text-blue-400" : "text-blue-600"
-                          }`}
-                        >
-                          {job.company}
+                        <p className={`mb-2 text-xs font-bold uppercase tracking-[0.24em] ${isDark ? "text-blue-400" : "text-blue-700"}`}>
+                          {job.period}
+                        </p>
+                        <CardTitle className="text-2xl sm:text-3xl">{job.title}</CardTitle>
+                        <CardDescription className={`mt-2 text-lg ${isDark ? "text-blue-300" : "text-blue-800"}`}>
+                          {job.company} <span className={isDark ? "text-gray-500" : "text-stone-400"}>·</span> {job.location}
                         </CardDescription>
                       </div>
                       <Badge
                         variant="secondary"
-                        className={`${
-                          isDark
-                            ? "bg-gray-700 text-gray-300"
-                            : "bg-gray-100 text-gray-700"
-                        } mt-2 sm:mt-0`}
+                        className={`w-fit rounded-full px-4 py-1.5 text-xs ${isDark ? "bg-white/10 text-gray-300" : "bg-stone-900/10 text-stone-700"}`}
                       >
-                        {job.period}
+                        {index === 0 ? "Current role" : "Experience"}
                       </Badge>
                     </div>
                   </CardHeader>
-                  <CardContent>
-                    <ul
-                      className={`${
-                        isDark ? "text-gray-300" : "text-gray-700"
-                      } mb-4 list-disc space-y-2 pl-5`}
-                    >
+                  <CardContent className="sm:px-8 sm:pb-8">
+                    <ul className={`mb-6 grid gap-3 pl-0 text-sm leading-6 sm:grid-cols-2 sm:gap-x-8 ${isDark ? "border-blue-400/30 text-gray-300" : "border-blue-700/25 text-stone-700"}`}>
                       {job.description.map((point, pointIndex) => (
-                        <li key={pointIndex}>{point}</li>
+                        <li key={pointIndex} className="relative before:absolute before:-left-[1.65rem] before:top-3 before:h-1.5 before:w-1.5 before:rounded-full before:bg-current">
+                          {point}
+                        </li>
                       ))}
                     </ul>
                     <div className="flex flex-wrap gap-2">
@@ -461,11 +501,7 @@ export default function Portfolio() {
                         <Badge
                           key={techIndex}
                           variant="outline"
-                          className={`${
-                            isDark
-                              ? "border-gray-600 text-gray-300"
-                              : "border-gray-300 text-gray-700"
-                          } hover:scale-105 transition-transform duration-200`}
+                          className={`rounded-full px-3 py-1 text-xs ${isDark ? "border-white/15 text-gray-300" : "border-stone-400/60 text-stone-700"}`}
                         >
                           {tech}
                         </Badge>
@@ -480,7 +516,7 @@ export default function Portfolio() {
       </motion.section>
 
       {/* Skills Section - Reverted to Original */}
-      <motion.section {...fadeInUp} id="skills" className="py-20">
+      <motion.section {...fadeInUp} id="skills" className="portfolio-section-alt py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -494,7 +530,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                "text-gray-300"
+                isDark ? "text-gray-300" : "text-stone-700"
               } max-w-2xl mx-auto`}
             >
               The tools and technologies I use to bring ideas to life
@@ -502,7 +538,7 @@ export default function Portfolio() {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"
             variants={staggerContainer}
             initial="initial"
             whileInView="whileInView"
@@ -516,39 +552,35 @@ export default function Portfolio() {
                 transition={{ type: "spring", stiffness: 300, damping: 10 }}
               >
                 <Card
-                  className={`${
-                    isDark
-                      ? "bg-gray-800 border-gray-700"
-                      : "bg-white border-gray-200"
-                  } h-full hover:shadow-xl transition-all duration-300`}
+  className={`skill-group-card h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+  isDark ? "bg-[#0a0a0a]/90 text-white" : "bg-[#f7eddf]/90 text-[#241d16]"
+  }`}
                 >
-                  <CardHeader>
-                    <CardTitle className="text-xl">
-                      {skillGroup.category}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2">
-                      {skillGroup.skills.map((skill, skillIndex) => (
-                        <motion.div
-                          key={skillIndex}
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <Badge
-                            variant="secondary"
-                            className={`${
-                              isDark
-                                ? "bg-gray-700 text-gray-300 hover:bg-gray-600"
-                                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                            } transition-all duration-200 cursor-pointer`}
-                          >
-                            {skill}
-                          </Badge>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </CardContent>
+  <CardHeader className="pb-4">
+  <div className="flex items-center justify-between gap-4">
+  <CardTitle className="text-xl">{skillGroup.category}</CardTitle>
+  <span className={`skill-count ${isDark ? "text-blue-300" : "text-blue-700"}`}>
+  {String(skillGroup.skills.length).padStart(2, "0")}
+  </span>
+  </div>
+  </CardHeader>
+  <CardContent>
+  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-1">
+  {skillGroup.skills.map((skill, skillIndex) => (
+  <motion.div
+  key={skillIndex}
+  whileHover={{ x: 4 }}
+  whileTap={{ scale: 0.98 }}
+  className={`skill-chip ${isDark ? "bg-white/[0.06] hover:bg-blue-500/15" : "bg-stone-900/[0.05] hover:bg-blue-700/10"}`}
+  >
+  <span className={`skill-logo ${isDark ? "bg-blue-400/15 text-blue-300" : "bg-blue-700/10 text-blue-800"}`} aria-hidden="true">
+  {techLogos[skill] ?? skill.slice(0, 2).toUpperCase()}
+  </span>
+  <span>{skill}</span>
+  </motion.div>
+  ))}
+  </div>
+  </CardContent>
                 </Card>
               </motion.div>
             ))}
@@ -560,7 +592,7 @@ export default function Portfolio() {
       <motion.section
         {...fadeInUp}
         id="projects"
-        className={`py-20 ${isDark ? "bg-gray-900" : "bg-gray-50"}`}
+        className={`portfolio-section py-20 ${isDark ? "text-white" : "text-slate-900"}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -575,7 +607,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                "text-gray-300"
+                isDark ? "text-gray-300" : "text-stone-700"
               } max-w-2xl mx-auto`}
             >
               A showcase of my recent work and personal projects
@@ -587,7 +619,7 @@ export default function Portfolio() {
       </motion.section>
 
       {/* Achievements Section */}
-      <motion.section {...fadeInUp} id="achievements" className="py-20">
+      <motion.section {...fadeInUp} id="achievements" className="portfolio-section-alt py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -601,7 +633,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                "text-gray-300"
+                isDark ? "text-gray-300" : "text-stone-700"
               } max-w-2xl mx-auto`}
             >
               Milestones and recognition that mark my professional journey
@@ -652,7 +684,7 @@ export default function Portfolio() {
                   className={`${
                     isDark
                       ? "bg-gray-800 border-gray-700"
-                      : "bg-white border-gray-200"
+                      : "bg-[#f4eadb] border-gray-200"
                   } hover:shadow-xl transition-all duration-300 h-full`}
                 >
                   <CardHeader>
@@ -697,7 +729,7 @@ export default function Portfolio() {
       <motion.section
         {...fadeInUp}
         id="extracurricular"
-        className={`py-20 ${isDark ? "bg-gray-900" : "bg-gray-50"}`}
+        className={`portfolio-section py-20 ${isDark ? "text-white" : "text-slate-900"}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -712,7 +744,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                "text-gray-300"
+                isDark ? "text-gray-300" : "text-stone-700"
               } max-w-2xl mx-auto`}
             >
               Beyond coding - my involvement in community and personal interests
@@ -758,7 +790,7 @@ export default function Portfolio() {
                   className={`${
                     isDark
                       ? "bg-gray-800 border-gray-700"
-                      : "bg-white border-gray-200"
+                      : "bg-[#f4eadb] border-gray-200"
                   } hover:shadow-xl transition-all duration-300 h-full`}
                 >
                   <CardHeader>
@@ -779,7 +811,7 @@ export default function Portfolio() {
       </motion.section>
 
       {/* Contact Section */}
-      <motion.section {...fadeInUp} id="contact" className="py-20">
+      <motion.section {...fadeInUp} id="contact" className="portfolio-section-alt py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -793,7 +825,7 @@ export default function Portfolio() {
             </h2>
             <p
               className={`text-lg ${
-                "text-gray-300"
+                isDark ? "text-gray-300" : "text-stone-700"
               } max-w-2xl mx-auto`}
             >
               I'm always open to discussing new opportunities and interesting
@@ -886,7 +918,7 @@ export default function Portfolio() {
                 className={`${
                   isDark
                     ? "bg-gray-800 border-gray-700"
-                    : "bg-white border-gray-200"
+                    : "bg-[#f4eadb] border-gray-200"
                 } hover:shadow-xl transition-all duration-300`}
               >
                 <CardHeader>
@@ -907,7 +939,7 @@ export default function Portfolio() {
                           className={`${
                             isDark
                               ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400"
-                              : "bg-white border-gray-300"
+                              : "bg-[#f4eadb] border-gray-300"
                           } transition-all duration-300`}
                         />
                       </motion.div>
@@ -921,7 +953,7 @@ export default function Portfolio() {
                           className={`${
                             isDark
                               ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400"
-                              : "bg-white border-gray-300"
+                              : "bg-[#f4eadb] border-gray-300"
                           } transition-all duration-300`}
                         />
                       </motion.div>
@@ -935,7 +967,7 @@ export default function Portfolio() {
                         className={`${
                           isDark
                             ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400"
-                            : "bg-white border-gray-300"
+                            : "bg-[#f4eadb] border-gray-300"
                         } transition-all duration-300`}
                       />
                     </motion.div>
@@ -949,7 +981,7 @@ export default function Portfolio() {
                         className={`${
                           isDark
                             ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400"
-                            : "bg-white border-gray-300"
+                            : "bg-[#f4eadb] border-gray-300"
                         } transition-all duration-300`}
                       />
                     </motion.div>
