@@ -412,48 +412,43 @@ export default function Portfolio() {
               <motion.div
                 key={index}
                 variants={staggerItem}
-                whileHover={{ scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                className="experience-entry"
               >
+                <div className="experience-marker" aria-hidden="true">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                </div>
                 <Card
-                  className={`${
+                  className={`experience-card ${
                     isDark
-                      ? "bg-gray-800 border-gray-700"
-                      : "bg-[#f4eadb] border-gray-200"
-                  } hover:shadow-xl transition-all duration-300`}
+                      ? "bg-[#0a0a0a]/90 text-white shadow-black/30"
+                      : "bg-[#f7eddf]/90 text-[#241d16] shadow-stone-900/10"
+                  } hover:-translate-y-1 hover:shadow-2xl transition-all duration-300`}
                 >
-                  <CardHeader>
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                  <CardHeader className="gap-4 pb-4 sm:px-8 sm:pt-8">
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                       <div>
-                        <CardTitle className="text-xl">{job.title}</CardTitle>
-                        <CardDescription
-                          className={`text-lg ${
-                            isDark ? "text-blue-400" : "text-blue-600"
-                          }`}
-                        >
-                          {job.company}
+                        <p className={`mb-2 text-xs font-bold uppercase tracking-[0.24em] ${isDark ? "text-blue-400" : "text-blue-700"}`}>
+                          {job.period}
+                        </p>
+                        <CardTitle className="text-2xl sm:text-3xl">{job.title}</CardTitle>
+                        <CardDescription className={`mt-2 text-lg ${isDark ? "text-blue-300" : "text-blue-800"}`}>
+                          {job.company} <span className={isDark ? "text-gray-500" : "text-stone-400"}>·</span> {job.location}
                         </CardDescription>
                       </div>
                       <Badge
                         variant="secondary"
-                        className={`${
-                          isDark
-                            ? "bg-gray-700 text-gray-300"
-                            : "bg-gray-100 text-gray-700"
-                        } mt-2 sm:mt-0`}
+                        className={`w-fit rounded-full px-4 py-1.5 text-xs ${isDark ? "bg-white/10 text-gray-300" : "bg-stone-900/10 text-stone-700"}`}
                       >
-                        {job.period}
+                        {index === 0 ? "Current role" : "Experience"}
                       </Badge>
                     </div>
                   </CardHeader>
-                  <CardContent>
-                    <ul
-                      className={`${
-                        isDark ? "text-gray-300" : "text-gray-700"
-                      } mb-4 list-disc space-y-2 pl-5`}
-                    >
+                  <CardContent className="sm:px-8 sm:pb-8">
+                    <ul className={`mb-6 grid gap-3 border-l-2 pl-5 text-sm leading-6 sm:grid-cols-2 sm:gap-x-8 ${isDark ? "border-blue-400/30 text-gray-300" : "border-blue-700/25 text-stone-700"}`}>
                       {job.description.map((point, pointIndex) => (
-                        <li key={pointIndex}>{point}</li>
+                        <li key={pointIndex} className="relative before:absolute before:-left-[1.65rem] before:top-3 before:h-1.5 before:w-1.5 before:rounded-full before:bg-current">
+                          {point}
+                        </li>
                       ))}
                     </ul>
                     <div className="flex flex-wrap gap-2">
@@ -461,11 +456,7 @@ export default function Portfolio() {
                         <Badge
                           key={techIndex}
                           variant="outline"
-                          className={`${
-                            isDark
-                              ? "border-gray-600 text-gray-300"
-                              : "border-gray-300 text-gray-700"
-                          } hover:scale-105 transition-transform duration-200`}
+                          className={`rounded-full px-3 py-1 text-xs ${isDark ? "border-white/15 text-gray-300" : "border-stone-400/60 text-stone-700"}`}
                         >
                           {tech}
                         </Badge>

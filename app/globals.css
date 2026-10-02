@@ -91,4 +91,60 @@ html {
   .portfolio-section-alt > .mx-auto {
     position: relative;
   }
+
+  .experience-entry {
+    position: relative;
+    display: grid;
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .experience-marker {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 1.5rem;
+    color: rgb(37 99 235 / 0.72);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+  }
+
+  .experience-marker::after {
+    content: "";
+    position: absolute;
+    top: 3.25rem;
+    bottom: -2rem;
+    left: 1.72rem;
+    width: 1px;
+    background: linear-gradient(180deg, rgb(37 99 235 / 0.45), transparent);
+  }
+
+  .experience-entry:last-child .experience-marker::after {
+    display: none;
+  }
+
+  .experience-card {
+    border: 0;
+    border-radius: 1.25rem;
+    box-shadow: 0 18px 50px -28px rgb(15 23 42 / 0.5);
+    backdrop-filter: blur(12px);
+  }
+
+  @media (max-width: 640px) {
+    .experience-entry {
+      grid-template-columns: 2rem minmax(0, 1fr);
+      gap: 0.75rem;
+    }
+
+    .experience-marker {
+      padding-top: 1.25rem;
+      font-size: 0.6rem;
+    }
+
+    .experience-marker::after {
+      left: 0.98rem;
+    }
+  }
 }
