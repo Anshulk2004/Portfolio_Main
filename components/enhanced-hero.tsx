@@ -252,7 +252,7 @@ export function EnhancedHero({ isDark, scrollToSection }: EnhancedHeroProps) {
                 transition={{ type: "spring", stiffness: 300, damping: 10 }}
               >
                 <Image
-                  src="/profile.jpg?height=320&width=320"
+                  src="/Anshul_Profile.jpeg?height=320&width=320"
                   alt="Profile Photo"
                   width={320}
                   height={320}
