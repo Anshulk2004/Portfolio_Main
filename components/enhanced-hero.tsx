@@ -124,7 +124,7 @@ export function EnhancedHero({ isDark, scrollToSection }: EnhancedHeroProps) {
                 whileTap={{ scale: 0.95 }}
               >
                 <a
-    href="https://drive.google.com/file/d/1snUKHF7wt0wFMItSeg50TyilmU1D-NiH/view?usp=sharing"
+    href="https://drive.google.com/file/d/1Tqre9R8iUzxjRJLPsdrdS_SOCSQBMjNe/view?usp=sharing"
     target="_blank"
     rel="noopener noreferrer"
   >
