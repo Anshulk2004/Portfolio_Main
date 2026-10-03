@@ -66,12 +66,11 @@ export default function Portfolio() {
 
   const navItems = [
     { name: "Home", id: "home" },
-    { name: "About", id: "about" },
     { name: "Work Experience", id: "experience" },
     { name: "Skills", id: "skills" },
     { name: "Projects", id: "projects" },
     { name: "Achievements", id: "achievements" },
-    { name: "Extra-curricular", id: "extracurricular" },
+    { name: "Positions", id: "extracurricular" },
     { name: "Contact Me", id: "contact" },
   ];
 
@@ -173,15 +172,15 @@ export default function Portfolio() {
   const skillGroups = [
     {
       category: "Languages",
-      skills: ["Java", "TypeScript", "JavaScript", "Python", "C++", "Kotlin", "Dart"],
+      skills: ["Java", "TypeScript", "JavaScript", "Python", "C++", "Dart"],
     },
     {
       category: "Frameworks & Technologies",
       skills: ["React.js", "Node.js", "Spring Boot", "Flask", "TensorFlow", "Generative AI", "AWS", "GCP", "Azure", "Docker"],
     },
     {
-      category: "Developer Tools & Databases",
-      skills: ["Git/GitHub", "Linux", "IntelliJ IDEA", "Android Studio", "MongoDB", "MySQL", "PostgreSQL"],
+      category: "Databases",
+      skills: ["MongoDB", "MySQL", "PostgreSQL", "Vector Databases", "Neo4j"],
     },
     {
       category: "Machine Learning & Data",
@@ -189,7 +188,7 @@ export default function Portfolio() {
     },
     {
       category: "Additional Technologies",
-      skills: ["Tailwind CSS", "React Native", "Flutter", "Firebase", "AWS DynamoDB", "Kubernetes", "Solidity", "IPFS"],
+      skills: ["Tailwind CSS", "React Native", "Flutter", "Firebase", "Kubernetes", "Solidity", "IPFS"],
     },
     {
       category: "Coursework",
@@ -494,83 +493,6 @@ export default function Portfolio() {
         </div>
       </motion.section>
 
-      {/* Skills Section */}
-      <motion.section {...fadeInUp} id="skills" className="portfolio-section-alt py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="mb-12 max-w-2xl text-center md:text-left"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <p className={`mb-3 text-xs font-bold uppercase tracking-[0.28em] ${isDark ? "text-blue-400" : "text-blue-700"}`}>
-              What I work with
-            </p>
-            <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
-              Skills & Technologies
-            </h2>
-            <p className={`text-base leading-7 ${isDark ? "text-gray-300" : "text-stone-700"}`}>
-              A focused toolkit for building thoughtful products, reliable systems, and data-informed experiences.
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 gap-4 md:grid-cols-2"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="whileInView"
-            viewport={{ once: true }}
-          >
-            {skillGroups.map((skillGroup, index) => (
-              <motion.div
-                key={index}
-                variants={staggerItem}
-                className={index > 1 && !showAllSkills ? "hidden md:block" : ""}
-              >
-                <Card
-                  className={`skill-group-card h-full overflow-hidden transition-all duration-300 hover:-translate-y-1 ${
-                    isDark ? "bg-[#0a0a0a]/80 text-white" : "bg-[#f7eddf]/80 text-[#241d16]"
-                  }`}
-                >
-                  <CardContent className="flex flex-col gap-4 p-5 sm:flex-row sm:items-start sm:p-6">
-                    <div className="flex shrink-0 items-center gap-3 sm:w-44 sm:flex-col sm:items-start sm:gap-2">
-                      <span className={`h-2 w-2 rounded-full ${isDark ? "bg-blue-400" : "bg-blue-700"}`} aria-hidden="true" />
-                      <h3 className="text-sm font-bold uppercase tracking-[0.16em]">{skillGroup.category}</h3>
-                    </div>
-                    <div className="flex flex-1 flex-wrap gap-2">
-                      {skillGroup.skills.map((skill) => (
-                        <span
-                          key={skill}
-                          className={`rounded-full border px-3 py-1.5 text-sm transition-colors ${
-                            isDark
-                              ? "border-white/10 bg-white/[0.04] text-gray-200 hover:border-blue-400/50 hover:bg-blue-400/10"
-                              : "border-stone-900/10 bg-stone-900/[0.04] text-stone-700 hover:border-blue-700/30 hover:bg-blue-700/10"
-                          }`}
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
-          <button
-            type="button"
-            onClick={() => setShowAllSkills((visible) => !visible)}
-            className={`mx-auto mt-6 flex items-center rounded-full border px-5 py-2.5 text-sm font-semibold transition-colors md:hidden ${
-              isDark
-                ? "border-white/15 text-gray-200 hover:bg-white/10"
-                : "border-stone-900/15 text-stone-700 hover:bg-stone-900/5"
-            }`}
-          >
-            {showAllSkills ? "Show less" : "Show more skills"}
-          </button>
-        </div>
-      </motion.section>
-
       {/* Enhanced Projects Section with Carousel */}
       <motion.section
         {...fadeInUp}
@@ -631,7 +553,6 @@ export default function Portfolio() {
             whileInView="whileInView"
             viewport={{ once: true }}
           >
-            <div className={`pointer-events-none absolute bottom-6 left-5 top-6 hidden w-px md:block ${isDark ? "bg-blue-400/25" : "bg-blue-700/20"}`} aria-hidden="true" />
             {[
               {
                 title: "Flipkart GRiD Semifinalist",
@@ -679,9 +600,8 @@ export default function Portfolio() {
               <motion.div
                 key={index}
                 variants={staggerItem}
-                className={`relative pl-0 md:pl-12 ${index > 2 && !showAllAchievements ? "hidden md:block" : ""}`}
+                className={`relative pl-0 ${index > 2 && !showAllAchievements ? "hidden md:block" : ""}`}
               >
-                <span className={`absolute left-3 top-7 hidden h-4 w-4 -translate-x-1/2 rounded-full border-4 md:block ${isDark ? "border-black bg-blue-400" : "border-[#eadcc8] bg-blue-700"}`} aria-hidden="true" />
                 <Card
                   className={`h-full border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
                     isDark
@@ -719,6 +639,82 @@ export default function Portfolio() {
             }`}
           >
             {showAllAchievements ? "Show less" : "Show more achievements"}
+          </button>
+        </div>
+      </motion.section>
+
+      {/* Skills Section */}
+      <motion.section {...fadeInUp} id="skills" className="portfolio-section-alt py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="mb-12 max-w-2xl text-center md:text-left"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <p className={`mb-3 text-xs font-bold uppercase tracking-[0.28em] ${isDark ? "text-blue-400" : "text-blue-700"}`}>
+              What I work with
+            </p>
+            <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
+              Skills & Technologies
+            </h2>
+            <p className={`text-base leading-7 ${isDark ? "text-gray-300" : "text-stone-700"}`}>
+              A focused toolkit for building thoughtful products, reliable systems, and data-informed experiences.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-1 gap-4 md:grid-cols-2"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true }}
+          >
+            {skillGroups.map((skillGroup, index) => (
+              <motion.div
+                key={index}
+                variants={staggerItem}
+                className={index > 1 && !showAllSkills ? "hidden md:block" : ""}
+              >
+                <Card
+                  className={`skill-group-card h-full overflow-hidden ${
+                    isDark ? "bg-[#0a0a0a]/80 text-white" : "bg-[#f7eddf]/80 text-[#241d16]"
+                  }`}
+                >
+                  <CardContent className="flex flex-col gap-4 p-5 sm:flex-row sm:items-start sm:p-6">
+                    <div className="flex shrink-0 items-center gap-3 sm:w-44 sm:flex-col sm:items-start sm:gap-2">
+                      <h3 className="text-sm font-bold uppercase tracking-[0.16em]">{skillGroup.category}</h3>
+                    </div>
+                    <div className="flex flex-1 flex-wrap gap-2">
+                      {skillGroup.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className={`rounded-full border px-3 py-1.5 text-sm ${
+                            isDark
+                              ? "border-white/10 bg-white/[0.04] text-gray-200"
+                              : "border-stone-900/10 bg-stone-900/[0.04] text-stone-700"
+                          }`}
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+          <button
+            type="button"
+            onClick={() => setShowAllSkills((visible) => !visible)}
+            className={`mx-auto mt-6 flex items-center rounded-full border px-5 py-2.5 text-sm font-semibold transition-colors md:hidden ${
+              isDark
+                ? "border-white/15 text-gray-200 hover:bg-white/10"
+                : "border-stone-900/15 text-stone-700 hover:bg-stone-900/5"
+            }`}
+          >
+            {showAllSkills ? "Show less" : "Show more skills"}
           </button>
         </div>
       </motion.section>

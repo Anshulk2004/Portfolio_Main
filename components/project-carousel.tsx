@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -24,39 +24,68 @@ interface ProjectCarouselProps {
 
 export function ProjectCarousel({ projects, isDark }: ProjectCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [isAutoPlaying, setIsAutoPlaying] = useState(false)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [isDetailsExpanded, setIsDetailsExpanded] = useState(false)
+  const carouselRef = useRef<HTMLDivElement>(null)
+  const manualPauseUntilRef = useRef(0)
+
+  useEffect(() => {
+    const node = carouselRef.current
+    if (!node) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          setIsAutoPlaying(false)
+          return
+        }
+
+        if (Date.now() >= manualPauseUntilRef.current) {
+          setIsAutoPlaying(true)
+        }
+      },
+      { threshold: 0.45 },
+    )
+
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [])
 
   useEffect(() => {
     if (!isAutoPlaying) return
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % projects.length)
-    }, 5000)
+    }, 3000)
 
     return () => clearInterval(interval)
   }, [isAutoPlaying, projects.length])
 
+  const pauseForManualInteraction = () => {
+    manualPauseUntilRef.current = Date.now() + 10000
+    setIsAutoPlaying(false)
+  }
+
   const nextProject = () => {
     setCurrentIndex((prev) => (prev + 1) % projects.length)
-    setIsAutoPlaying(false)
+    pauseForManualInteraction()
     setIsDetailsExpanded(false)
   }
 
   const prevProject = () => {
     setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length)
-    setIsAutoPlaying(false)
+    pauseForManualInteraction()
     setIsDetailsExpanded(false)
   }
 
   const goToProject = (index: number) => {
     setCurrentIndex(index)
-    setIsAutoPlaying(false)
+    pauseForManualInteraction()
     setIsDetailsExpanded(false)
   }
 
   return (
-    <div className="relative">
+    <div ref={carouselRef} className="relative">
       {/* Main Carousel */}
       <div className="relative overflow-hidden rounded-xl">
         <AnimatePresence mode="wait">
@@ -99,11 +128,9 @@ export function ProjectCarousel({ projects, isDark }: ProjectCarouselProps) {
                     </button>
                     <div className={`${isDetailsExpanded ? "block" : "hidden"} sm:block`}>
                       <CardDescription className={`text-base sm:text-lg ${isDark ? "text-gray-300" : "text-gray-600"}`}>
-                        <ul className="list-disc space-y-2 pl-5">
-                          {projects[currentIndex].description.map((point, pointIndex) => (
-                            <li key={pointIndex}>{point}</li>
-                          ))}
-                        </ul>
+                        <p className="leading-7">
+                          {projects[currentIndex].description.join(" ")}
+                        </p>
                       </CardDescription>
                     </div>
                   </CardHeader>
@@ -195,23 +222,33 @@ export function ProjectCarousel({ projects, isDark }: ProjectCarouselProps) {
       </div>
 
       {/* Project Selector */}
-      <div className="mt-8 grid grid-cols-2 gap-2 sm:grid-cols-4">
+      <div className="mt-8 flex justify-center gap-6 sm:gap-10">
         {projects.map((project, index) => (
           <button
             key={project.title}
             type="button"
             onClick={() => goToProject(index)}
-            className={`rounded-xl border px-3 py-3 text-left transition-all duration-200 sm:px-4 ${
+            className={`relative px-1 pb-2 text-sm font-semibold transition-colors sm:text-base ${
               index === currentIndex
                 ? isDark
-                  ? "border-blue-400/60 bg-blue-400/10 text-white"
-                  : "border-blue-700/40 bg-blue-700/10 text-blue-950"
+                  ? "text-white"
+                  : "text-stone-900"
                 : isDark
-                  ? "border-white/10 bg-white/[0.03] text-gray-400 hover:border-white/25 hover:text-gray-200"
-                  : "border-stone-900/10 bg-stone-900/[0.03] text-stone-600 hover:border-stone-900/25 hover:text-stone-900"
+                  ? "text-gray-500 hover:text-gray-300"
+                  : "text-stone-500 hover:text-stone-800"
             }`}
           >
             <span className="block truncate text-xs font-semibold sm:text-sm">{project.title.split(" – ")[0]}</span>
+            <span
+              className={`absolute bottom-0 left-0 h-0.5 w-full origin-center transition-transform duration-300 ${
+                index === currentIndex
+                  ? isDark
+                    ? "scale-x-100 bg-blue-400"
+                    : "scale-x-100 bg-blue-700"
+                  : "scale-x-0"
+              }`}
+              aria-hidden="true"
+            />
           </button>
         ))}
       </div>
